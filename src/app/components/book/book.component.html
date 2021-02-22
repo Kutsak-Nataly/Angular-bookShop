@@ -1,0 +1,14 @@
+<p>BookComponent works!</p>
+<div *ngIf="let books; else loading">
+<ul *ngFor="let book of books">
+  <li>Название: <span>{{book.name}}</span></li>
+  <li>Описание: <span>{{book.description}}</span></li>
+  <li>Цена: <span>{{book.price}}</span></li>
+  <li>Категория: <span>{{book.category}}</span></li>
+  <li>Дата поступления: <span>{{book.createDate}}</span></li>
+  <li>Наличие: <span>{{book.isAvailable}}</span></li>
+</ul>
+</div>
+<ng-template #loading>
+  <h5>Книг нет</h5>
+</ng-template>
