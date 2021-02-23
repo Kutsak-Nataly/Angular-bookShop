@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {TestData} from '../shared/data/TestData';
 import {BookModel} from '../models/BookModel';
 
@@ -7,9 +7,11 @@ import {BookModel} from '../models/BookModel';
 })
 export class DataHandlerService {
 
-  constructor() { }
-  getAllBooks():BookModel[] {
-return TestData.books;
+  constructor() {
+  }
+
+  getAllBooks(): BookModel[] {
+    return TestData.books;
   }
 
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BookModel} from '../../models/BookModel';
-import {TestData} from '../../shared/data/TestData';
+import {DataHandlerService} from '../../services/data-handler.service';
 
 @Component({
   selector: 'app-book',
@@ -8,13 +8,23 @@ import {TestData} from '../../shared/data/TestData';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
-  constructor() {
+  books: BookModel[];
+  book: BookModel;
 
+  constructor(private dataHandler: DataHandlerService) {
   }
-  private books: BookModel[];
 
   ngOnInit(): void {
-   this.books = TestData.books;
+    this.books = this.dataHandler.getAllBooks();
+
   }
-  console.log(books);
+
+  onBuy(book: BookModel): void {
+    console.log(book);
+
+  }
+
+  overBuy(): void {
+    return;
+  }
 }

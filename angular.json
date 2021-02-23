@@ -50,7 +50,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "../node_modules/bootstrap-css-only/css/bootstrap.css",
+              "../node_modules/bootstrap-css-only/css/bootstrap-grid.css",
+              "../node_modules/bootstrap-css-only/css/bootstrap-reboot.css"
             ],
             "scripts": []
           },
@@ -119,15 +122,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },

@@ -1,27 +1,64 @@
 import {BookModel} from '../../models/BookModel';
-import {CategoryBook} from '../../models/CategoryBook';
+import {CategoryModel} from '../../models/CategoryModel';
 
 export class TestData {
 
   static books: BookModel[] = [
     {
       name: 'Тайна домика на пляже',
-      description: 'Саманте Вулф и Элли Паркер невероятно повезло! Подруги целую неделю будут жить в домике на пляже! Они смогут плавать сколько захотят, любоваться закатами на самом берегу океана и научатся сёрфить. А всё потому, что папе Сэм предложили работу в Древесной Бухте – маленьком островном городке. Сэм и Элли наслаждаются летним отдыхом и случайно знакомятся с обитателями соседнего коттеджа. Странная семейная пара, Лиза и Кевин, и их маленькая дочь Эрика не очень-то рады общению. И почему малышка постоянно ищет девочку по имени Кэрри? Кто она? Почему Лиза и Кевин делают вид, что всё в порядке? Сэм и Элли берутся за расследование и начинают догадываться, что всё происходящее как-то связано с заброшенным маяком на Скале мертвеца.',
+      description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
-      category: CategoryBook(1),
+      category: CategoryModel.det,
       createDate: new Date('2019-04-10'),
       isAvailable: true
     },
     {
       name: 'Темные предки светлой детки',
-      description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева студентки Ани Волковой, любительницы родословных. Однажды, распутывая собственную родословную, Аня озадачилась тем фактом, что её бабуля всю жизнь носила чужую фамилию, и теперь девушка хочет разобраться почему...',
+      description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 13,
-      category: CategoryBook(0),
+      category: CategoryModel.history,
+      createDate: new Date('2019-06-10'),
+      isAvailable: false
+    },
+    {
+      name: 'Романтические прозы',
+      description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
+      price: 43,
+      category: CategoryModel.roman,
+      createDate: new Date('2019-06-10'),
+      isAvailable: true
+    },
+    {
+      name: 'О чудное мгновение',
+      description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
+      price: 64,
+      category: CategoryModel.poez,
+      createDate: new Date('2019-06-10'),
+      isAvailable: false
+    },
+    {
+      name: 'Детский мир',
+      description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
+      price: 23,
+      category: CategoryModel.child,
+      createDate: new Date('2019-06-10'),
+      isAvailable: true
+    },
+    {
+      name: 'Фантастический мир',
+      description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
+      price: 8,
+      category: CategoryModel.fantasy,
+      createDate: new Date('2019-06-10'),
+      isAvailable: true
+    },
+    {
+      name: 'Сетка модульная',
+      description: 'На этот раз тайна зародилась после',
+      price: 41,
+      category: CategoryModel.other,
       createDate: new Date('2019-06-10'),
       isAvailable: true
     }
-
   ];
 }
-
-``;
