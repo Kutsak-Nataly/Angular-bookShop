@@ -1,0 +1,12 @@
+<h2>Корзина</h2>
+<div *ngIf="items.length>0; else nobooks;">
+<ul>
+  <li class="list-group-item" *ngFor="let item of items">
+    <app-cart-item [item]="item"></app-cart-item>
+  </li>
+</ul>
+<button (click)="clearCart()">Очистить корзину</button>
+</div>
+<ng-template #nobooks>
+  <h5>Корзина пуста</h5>
+</ng-template>

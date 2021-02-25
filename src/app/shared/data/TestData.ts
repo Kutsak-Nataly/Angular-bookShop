@@ -5,6 +5,7 @@ export class TestData {
 
   static books: BookModel[] = [
     {
+      idbook:0,
       name: 'Тайна домика на пляже',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
@@ -13,6 +14,7 @@ export class TestData {
       isAvailable: true
     },
     {
+      idbook: 1,
       name: 'Темные предки светлой детки',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 13,
@@ -21,6 +23,7 @@ export class TestData {
       isAvailable: false
     },
     {
+      idbook: 2,
       name: 'Романтические прозы',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 43,
@@ -29,6 +32,7 @@ export class TestData {
       isAvailable: true
     },
     {
+      idbook: 3,
       name: 'О чудное мгновение',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 64,
@@ -37,6 +41,7 @@ export class TestData {
       isAvailable: false
     },
     {
+      idbook: 4,
       name: 'Детский мир',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
@@ -45,6 +50,7 @@ export class TestData {
       isAvailable: true
     },
     {
+      idbook: 5,
       name: 'Фантастический мир',
       description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
       price: 8,
@@ -53,6 +59,7 @@ export class TestData {
       isAvailable: true
     },
     {
+      idbook: 6,
       name: 'Сетка модульная',
       description: 'На этот раз тайна зародилась после',
       price: 41,

@@ -1,16 +1,18 @@
+<h2>Книги</h2>
 <div *ngIf="books; else loading;" class="row">
-  <div *ngFor="let book of books" class="col-sm-6 col-md-4 col-lg-3">
+  <div *ngFor="let book of books" class="col-md-6 col-lg-4">
     <h4>{{book.name}}</h4>
-    <ul>
+    <ul class="booklist">
       <li>Описание: <span>{{book.description}}</span></li>
       <li>Категория: <span>{{book.category}}</span></li>
-      <li>Дата поступления: <span>{{book.createDate}}</span></li>
+      <li>Дата поступления: <span>{{book.createDate | date : 'mediumDate': null: 'ru-BY'}}</span></li>
       <li>Наличие: <span>{{book.isAvailable}}</span></li>
-      <li>Цена: <span>{{book.price}}</span></li>
+      <li>Цена: <span>{{book.price}}</span> руб.</li>
     </ul>
     <div *ngIf="book.isAvailable">
-      <button (click)="onBuy(book)" (mouseover)="overBuy()">Купить</button>
+      <button (click)="onBuy(book)" (mouseover)="onOverBuy()">Buy</button>
     </div>
+    <hr>
   </div>
 </div>
 <ng-template #loading>

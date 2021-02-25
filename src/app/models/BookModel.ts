@@ -1,6 +1,7 @@
 import {CategoryModel} from './CategoryModel';
 
 export class BookModel {
+  idbook: number;
   name: string;
   description: string;
   price: number;
