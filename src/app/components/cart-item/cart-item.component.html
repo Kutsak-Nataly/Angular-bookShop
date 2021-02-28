@@ -1,3 +1,7 @@
-{{ item.name }}
-<button (click)="onDeleatebook(item)">Удалить</button>
+<h4>{{ item.name }}</h4>
+<button (click)="onDeleteBook(i)">Удалить</button>
+<button (click)="onIncrement(i)">+</button>
+<span> {{item.counted}} </span>
+<button (click)="onDecrement(i)">-</button>
+<span><strong #price>{{item.counted * item.price}} </strong> руб.</span>
 

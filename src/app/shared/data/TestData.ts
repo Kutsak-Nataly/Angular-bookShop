@@ -5,67 +5,74 @@ export class TestData {
 
   static books: BookModel[] = [
     {
-      idbook:0,
+      idKey:0,
       name: 'Тайна домика на пляже',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
       category: CategoryModel.det,
       createDate: new Date('2019-04-10'),
-      isAvailable: true
+      isAvailable: 3,
+      counted: 0
     },
     {
-      idbook: 1,
+      idKey: 1,
       name: 'Темные предки светлой детки',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 13,
       category: CategoryModel.history,
       createDate: new Date('2019-06-10'),
-      isAvailable: false
+      isAvailable: 0,
+      counted: 0
     },
     {
-      idbook: 2,
+      idKey: 2,
       name: 'Романтические прозы',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 43,
       category: CategoryModel.roman,
       createDate: new Date('2019-06-10'),
-      isAvailable: true
+      isAvailable: 5,
+      counted: 0
     },
     {
-      idbook: 3,
+      idKey: 3,
       name: 'О чудное мгновение',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 64,
       category: CategoryModel.poez,
       createDate: new Date('2019-06-10'),
-      isAvailable: false
+      isAvailable: 0,
+      counted: 0
     },
     {
-      idbook: 4,
+      idKey: 4,
       name: 'Детский мир',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
       category: CategoryModel.child,
       createDate: new Date('2019-06-10'),
-      isAvailable: true
+      isAvailable: 10,
+      counted: 0
     },
     {
-      idbook: 5,
+      idKey: 5,
       name: 'Фантастический мир',
       description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
       price: 8,
       category: CategoryModel.fantasy,
       createDate: new Date('2019-06-10'),
-      isAvailable: true
+      isAvailable: 10,
+      counted: 0
     },
     {
-      idbook: 6,
+      idKey: 6,
       name: 'Сетка модульная',
       description: 'На этот раз тайна зародилась после',
       price: 41,
       category: CategoryModel.other,
       createDate: new Date('2019-06-10'),
-      isAvailable: true
+      isAvailable: 9,
+      counted: 0
     }
   ];
 }

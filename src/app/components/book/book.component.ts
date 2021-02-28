@@ -10,7 +10,6 @@ import {CartService} from '../../services/cart.service';
 })
 export class BookComponent implements OnInit {
   books: BookModel[];
-  book: BookModel;
 
   constructor(private dataHandler: DataHandlerService,
               private cartService: CartService) {
@@ -18,14 +17,10 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {
     this.books = this.dataHandler.getAllBooks();
-
   }
 
   onBuy(book: BookModel): void {
     this.cartService.addToCart(book);
   }
 
-  onOverBuy(): void {
-    return;
-  }
 }
