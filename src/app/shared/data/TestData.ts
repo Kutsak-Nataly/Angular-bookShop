@@ -30,7 +30,7 @@ export class TestData {
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 43,
       category: CategoryModel.roman,
-      createDate: new Date('2019-06-10'),
+      createDate: new Date('2020-06-02'),
       isAvailable: 5,
       counted: 0
     },
@@ -60,7 +60,7 @@ export class TestData {
       description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
       price: 8,
       category: CategoryModel.fantasy,
-      createDate: new Date('2019-06-10'),
+      createDate: new Date('2019-09-16'),
       isAvailable: 10,
       counted: 0
     },

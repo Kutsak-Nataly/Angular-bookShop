@@ -5,12 +5,12 @@ import {BookModel} from '../models/BookModel';
 @Injectable({
   providedIn: 'root'
 })
-export class DataHandlerService {
+export class BookService {
 
   constructor() {
   }
 
-  getAllBooks(): BookModel[] {
+  getBooks(): BookModel[] {
     return TestData.books;
   }
 

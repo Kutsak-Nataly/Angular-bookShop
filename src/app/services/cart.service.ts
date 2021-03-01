@@ -10,7 +10,7 @@ export class CartService {
   constructor() {
   }
 
-  addToCart(item: BookModel): BookModel[] {
+  addBook(item: BookModel): BookModel[] {
     if (this.cart.indexOf(item) !== -1) {
       alert('Данынй товар уже в корзине');
     } else {
@@ -24,20 +24,20 @@ export class CartService {
     return this.cart;
   }
 
-  deleteBook(i: number): BookModel[] {
+  removeBook(i: number): BookModel[] {
     return this.cart.splice(i, 1);
   }
 
-  clearCart(): BookModel[] {
+  removeAllBooks(): BookModel[] {
     return this.cart = [];
   }
 
-  Increment(i: number): BookModel[] {
+  increaseQuantity(i: number): BookModel[] {
     this.cart[i].counted++;
     return this.cart;
   }
 
-  Decrement(i: number): BookModel[] {
+  decreaseQuantity(i: number): BookModel[] {
     this.cart[i].counted--;
     if (this.cart[i].counted < 1) {
       alert('Товар будет удален из корзины');
@@ -45,5 +45,9 @@ export class CartService {
     } else {
       return this.cart;
     }
+  }
+
+  updateCartData() {
+
   }
 }

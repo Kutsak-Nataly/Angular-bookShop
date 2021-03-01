@@ -20,14 +20,15 @@ export class CartItemComponent implements OnInit {
   }
 
   onDeleteBook(i) {
-    return this.cartService.deleteBook(i);
+    return this.cartService.removeBook(i);
   }
 
   onIncrement(i) {
-    return this.cartService.Increment(i);
+    return this.cartService.increaseQuantity(i);
   }
 
   onDecrement(i) {
-    return this.cartService.Decrement(i);
+    return this.cartService.decreaseQuantity(i);
   }
+
 }
