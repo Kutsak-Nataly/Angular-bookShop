@@ -1,13 +1,27 @@
 import {Injectable} from '@angular/core';
 import {BookModel} from '../models/BookModel';
+import {TotalCart} from '../models/TotalCartModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private cart: BookModel[] = [];
+  private totalCart: TotalCart;
 
   constructor() {
+  }
+
+  updateCartData() {
+    let quantity = 0;
+    let sum = 0;
+    this.cart.forEach((item: BookModel) => {
+      quantity += item.counted;
+      sum += item.counted * item.price;
+    });
+    this.totalCart.totalQuantity = quantity;
+    this.totalCart.totalSum = sum;
+    return this.totalCart;
   }
 
   addBook(item: BookModel): BookModel[] {
@@ -34,7 +48,13 @@ export class CartService {
 
   increaseQuantity(i: number): BookModel[] {
     this.cart[i].counted++;
-    return this.cart;
+    if (this.cart[i].counted > this.cart[i].isAvailable) {
+      alert('Для заказа доступно только ' + this.cart[i].isAvailable + ' книг');
+      this.cart[i].counted--;
+      return;
+    } else {
+      return this.cart;
+    }
   }
 
   decreaseQuantity(i: number): BookModel[] {
@@ -45,9 +65,5 @@ export class CartService {
     } else {
       return this.cart;
     }
-  }
-
-  updateCartData() {
-
   }
 }

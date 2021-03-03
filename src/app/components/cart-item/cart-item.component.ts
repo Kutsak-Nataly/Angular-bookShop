@@ -1,6 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BookModel} from '../../models/BookModel';
-import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -11,24 +10,17 @@ import {CartService} from '../../services/cart.service';
 export class CartItemComponent implements OnInit {
 
   @Input() item: BookModel;
-  @Input() i: number;
+  @Input() index: number;
 
-  constructor(private cartService: CartService) {
+  @Output() removeBook = new EventEmitter<number>();
+  @Output() increaseQuantity = new EventEmitter<number>();
+  @Output() decreaseQuantity = new EventEmitter<number>();
+  @Output() updateCartTotal = new EventEmitter();
+
+  constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  onDeleteBook(i) {
-    return this.cartService.removeBook(i);
-  }
-
-  onIncrement(i) {
-    return this.cartService.increaseQuantity(i);
-  }
-
-  onDecrement(i) {
-    return this.cartService.decreaseQuantity(i);
   }
 
 }

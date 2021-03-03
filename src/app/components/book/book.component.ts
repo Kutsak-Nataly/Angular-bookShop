@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
     this.books = this.dataHandler.getBooks();
   }
 
-  onBuy(book: BookModel): void {
+  buyBook(book: BookModel): void {
     this.cartService.addBook(book);
   }
 

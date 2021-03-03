@@ -1,0 +1,28 @@
+<h4>Тесты и эксперименты</h4>
+<div class="row">
+  <div class="col-6">
+    <p>Наведите курсор на кнопки</p>
+    <button>1</button>
+    <button>2</button>
+
+    <h5>Обновление текста сразу</h5>
+    <input (keyup)="onKey($event)">
+    <p>{{textInput}}</p>
+    <hr>
+    <h5>Обновление текста после нажатия клавиши "Enter"</h5>
+    <input (keyup.enter)="onKeyEnter($event)">
+    <p>{{textInput1}}</p>
+  </div>
+  <div class="col-6">
+    <p appZoom>Property decorator that configures a view query. The change detector looks for the first element or the
+      directive matching the selector in the view DOM. If the view DOM changes, and a new child matches the selector,
+      the property is updated.</p>
+    <app-test-item>
+      Respond after Angular initializes the component's views and child views, or the view that contains the directive.
+    </app-test-item>
+    <p>
+      <button (click)="testViewChild()">Проверка ViewChild</button>
+    </p>
+  </div>
+
+</div>
