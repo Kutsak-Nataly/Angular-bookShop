@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BookModel} from '../../models/BookModel';
+import {BookModel} from '../../../shared/models/BookModel';
 
 @Component({
   selector: 'app-cart-item',
@@ -11,16 +11,15 @@ export class CartItemComponent implements OnInit {
 
   @Input() item: BookModel;
   @Input() index: number;
-
   @Output() removeBook = new EventEmitter<number>();
   @Output() increaseQuantity = new EventEmitter<number>();
   @Output() decreaseQuantity = new EventEmitter<number>();
-  @Output() updateCartTotal = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -1,10 +1,7 @@
 <h4>{{ item.name }}</h4>
-<button
-  (click)="removeBook.emit(index)"
-  (click)="updateCartTotal.emit()"
->Удалить</button>
+<button (click)="removeBook.emit(index)">Удалить
+</button>
 <button (click)="increaseQuantity.emit(index)">+</button>
 <span> {{item.counted}} </span>
 <button (click)="decreaseQuantity.emit(index)">-</button>
-<span><strong>{{item.counted * item.price}} </strong> руб.</span>
-
+<strong> {{item.price*item.counted}}</strong>

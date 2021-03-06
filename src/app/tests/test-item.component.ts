@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   template: `
       <ng-content></ng-content>
   `,
-  styles: []
+  styles: ['div {border: 1px solid #8b8b8b;}']
 })
 export class TestItemComponent implements OnInit {
 

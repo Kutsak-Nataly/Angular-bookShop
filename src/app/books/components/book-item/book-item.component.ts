@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BookModel} from '../../models/BookModel';
+import {BookModel} from '../../../shared/models/BookModel';
 
 @Component({
   selector: 'app-book-item',
@@ -8,6 +8,7 @@ import {BookModel} from '../../models/BookModel';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookItemComponent implements OnInit {
+
   @Input() book: BookModel;
 
   @Output() buy = new EventEmitter<BookModel>();
@@ -16,6 +17,7 @@ export class BookItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 }

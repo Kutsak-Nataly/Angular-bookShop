@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CartService} from '../../services/cart.service';
-import {TotalCart} from '../../models/TotalCartModel';
+import {CartService} from '../../../shared/services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,25 +8,26 @@ import {TotalCart} from '../../models/TotalCartModel';
 })
 export class CartComponent implements OnInit {
   items = [];
-  totalCart: TotalCart;
+  totalCart = [0, 0];
 
   constructor(private cartService: CartService) {
   }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    this.updateCartData(this.items);
   }
 
-  updateCartData(){
-    this.totalCart = this.cartService.updateCartData();
-    //не работает вывод обновленных данных по корзине общая цена и количество
-    console.log(this.totalCart);
+  updateCartData(items) {
+    this.totalCart = this.cartService.updateCartData(items);
   }
+
   removeBook(index) {
     return this.cartService.removeBook(index);
   }
 
   increaseQuantity(index) {
+    this.updateCartData(this.items);
     return this.cartService.increaseQuantity(index);
   }
 

@@ -1,5 +1,5 @@
-import {BookModel} from '../../models/BookModel';
-import {CategoryModel} from '../../models/CategoryModel';
+import {BookModel} from '../models/BookModel';
+import {CategoryModel} from '../models/CategoryModel';
 
 export class TestData {
 

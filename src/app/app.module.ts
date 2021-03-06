@@ -1,31 +1,27 @@
-import {CartItemComponent} from './components/cart-item/cart-item.component';
 import {AppComponent} from './app.component';
-import {CartComponent} from './components/cart/cart.component';
 import {registerLocaleData} from '@angular/common';
 import {LOCALE_ID, NgModule} from '@angular/core';
-import {BookComponent} from './components/book/book.component';
 import {BrowserModule} from '@angular/platform-browser';
 import localeDECH from '@angular/common/locales/ru-BY';
-import { BookItemComponent } from './components/book-item/book-item.component';
-import { TestComponent } from './components/test/test.component';
-import { ZoomDirective } from './components/test/zoom.directive';
-import { TestItemComponent } from './components/test/test-item.component';
+import {BooksModule} from './books/books.module';
+import {TestsModule} from './tests/tests.module';
+import {OrdersModule} from './orders/orders.module';
+import {CartModule} from './cart/cart.module';
+import {SharedModule} from './shared/shared.module';
 
 registerLocaleData(localeDECH);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BookComponent,
-    CartComponent,
-    CartItemComponent,
-    BookItemComponent,
-    TestComponent,
-    ZoomDirective,
-    TestItemComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BooksModule,
+    OrdersModule,
+    CartModule,
+    TestsModule,
+    SharedModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-BY'}

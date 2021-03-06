@@ -1,26 +1,26 @@
 import {Injectable} from '@angular/core';
 import {BookModel} from '../models/BookModel';
-import {TotalCart} from '../models/TotalCartModel';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CartService {
   private cart: BookModel[] = [];
-  private totalCart: TotalCart;
+  private totalCart = [0, 0];
 
   constructor() {
   }
 
-  updateCartData() {
-    let quantity = 0;
-    let sum = 0;
-    this.cart.forEach((item: BookModel) => {
-      quantity += item.counted;
-      sum += item.counted * item.price;
+  updateCartData(items): Array<number> {
+    this.totalCart[0] = 0;
+    this.totalCart[1] = 0;
+    items.forEach((item: BookModel) => {
+      this.totalCart[0] = this.totalCart[0] + item.counted;
+      this.totalCart[1] = this.totalCart[1] + item.counted * item.price;
+      console.log(item.counted);
     });
-    this.totalCart.totalQuantity = quantity;
-    this.totalCart.totalSum = sum;
+    console.log(items);
     return this.totalCart;
   }
 

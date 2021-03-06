@@ -1,0 +1,41 @@
+<h4>Тесты и эксперименты</h4>
+<div class="row">
+  <div class="col-6">
+    <h5>Обновление текста сразу</h5>
+    <lable>Введите текст
+      <input (keyup)="onKey($event)">
+    </lable>
+    <p>{{textInput}}</p>
+    <hr>
+    <h5>Обновление текста после нажатия клавиши "Enter"</h5>
+    <label>Введите текст
+      <input (keyup.enter)="onKeyEnter($event)">
+    </label>
+    <p>{{textInput1}}</p>
+  </div>
+  <div class="col-6">
+    <p appZoom [color]="color" [sizeFont]="sizeFont">Директива appZoom с @HostListner click. Надо кликнуть на этом
+      абзаце. Предвариетльно необходимо задать цвет и размер шрифта.</p>
+    <label>Введите номер цвета
+      <input type="text" [(ngModel)]="color" placeholder="введите номер цвета">
+    </label>
+    <label>
+      <input type="number" [(ngModel)]="sizeFont" placeholder="введите размер шрифта">
+    </label>
+    <app-item-child></app-item-child>
+    <button (click)="showBlock()">ViewChild компонент</button>
+    <hr>
+    <app-test-item>
+      <p #pChild>Здесь будет меняться цвет текста Children и добавляться в конце пунктов номера.</p>
+      <ul>
+        <li #pChildren>Текст</li>
+        <li #pChildren>Текст</li>
+        <li #pChildren>Текст</li>
+      </ul>
+    </app-test-item>
+    <p>
+      <button (click)="testViewChild()">Проверка ViewChild</button>
+    </p>
+  </div>
+
+</div>
