@@ -2,9 +2,9 @@
 <div class="row">
   <div class="col-6">
     <h5>Обновление текста сразу</h5>
-    <lable>Введите текст
+    <label>Введите текст
       <input (keyup)="onKey($event)">
-    </lable>
+    </label>
     <p>{{textInput}}</p>
     <hr>
     <h5>Обновление текста после нажатия клавиши "Enter"</h5>
@@ -13,13 +13,14 @@
     </label>
     <p>{{textInput1}}</p>
   </div>
+
   <div class="col-6">
     <p appZoom [color]="color" [sizeFont]="sizeFont">Директива appZoom с @HostListner click. Надо кликнуть на этом
       абзаце. Предвариетльно необходимо задать цвет и размер шрифта.</p>
     <label>Введите номер цвета
       <input type="text" [(ngModel)]="color" placeholder="введите номер цвета">
     </label>
-    <label>
+    <label>Введите номер
       <input type="number" [(ngModel)]="sizeFont" placeholder="введите размер шрифта">
     </label>
     <app-item-child></app-item-child>
