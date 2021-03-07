@@ -10,6 +10,8 @@ import {CartService} from '../../../shared/services/cart.service';
 })
 export class BookComponent implements OnInit {
   books: BookModel[];
+  sortFlag: string;
+  sortParam: string;
 
   constructor(private dataHandler: BookService,
               private cartService: CartService) {

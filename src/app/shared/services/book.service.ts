@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {TestData} from '../data/TestData';
-import {BookModel} from '../models/BookModel';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,7 @@ export class BookService {
   constructor() {
   }
 
-  getBooks(): BookModel[] {
+  getBooks() {
     return TestData.books;
   }
 

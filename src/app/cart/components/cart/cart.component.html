@@ -12,7 +12,7 @@
 </ul>
 <button (click)="onClearCart()">Очистить корзину</button>
   <hr>
-  Общая стоимость: {{totalCart[1]}} руб. / Всего книг: {{totalCart[0]}}
+  Всего книг: <strong>{{countCart}}</strong> / Общая стоимость: <strong>{{sumCart}}</strong> руб.
 </div>
 <ng-template #nobooks>
   <h5>Корзина пуста</h5>

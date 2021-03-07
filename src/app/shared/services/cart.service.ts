@@ -1,27 +1,30 @@
 import {Injectable} from '@angular/core';
 import {BookModel} from '../models/BookModel';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CartService {
+  sumCartSub = new Subject<number>();
+  countCartSub = new Subject<number>();
+  private sumCart = 0;
+  private countCart = 0;
   private cart: BookModel[] = [];
-  private totalCart = [0, 0];
 
   constructor() {
   }
 
-  updateCartData(items): Array<number> {
-    this.totalCart[0] = 0;
-    this.totalCart[1] = 0;
+  updateCartData(items) {
+    this.sumCart = 0;
+    this.countCart = 0;
     items.forEach((item: BookModel) => {
-      this.totalCart[0] = this.totalCart[0] + item.counted;
-      this.totalCart[1] = this.totalCart[1] + item.counted * item.price;
-      console.log(item.counted);
+      this.countCart += item.counted;
+      this.sumCart += item.counted * item.price;
     });
-    console.log(items);
-    return this.totalCart;
+    this.sumCartSub.next(this.sumCart);
+    this.countCartSub.next(this.countCart);
   }
 
   addBook(item: BookModel): BookModel[] {
@@ -30,6 +33,7 @@ export class CartService {
     } else {
       item.counted = 1;
       this.cart.push(item);
+      this.updateCartData(this.cart);
       return this.cart;
     }
   }
@@ -39,7 +43,9 @@ export class CartService {
   }
 
   removeBook(i: number): BookModel[] {
-    return this.cart.splice(i, 1);
+    this.cart.splice(i, 1);
+    this.updateCartData(this.cart);
+    return this.cart;
   }
 
   removeAllBooks(): BookModel[] {
@@ -53,6 +59,7 @@ export class CartService {
       this.cart[i].counted--;
       return;
     } else {
+      this.updateCartData(this.cart);
       return this.cart;
     }
   }
@@ -62,8 +69,9 @@ export class CartService {
     if (this.cart[i].counted < 1) {
       alert('Товар будет удален из корзины');
       this.cart.splice(i, 1);
-    } else {
-      return this.cart;
     }
+    this.updateCartData(this.cart);
+    return this.cart;
+
   }
 }

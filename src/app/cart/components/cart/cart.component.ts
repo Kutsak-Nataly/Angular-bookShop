@@ -8,18 +8,16 @@ import {CartService} from '../../../shared/services/cart.service';
 })
 export class CartComponent implements OnInit {
   items = [];
-  totalCart = [0, 0];
+  sumCart: number;
+  countCart: number;
 
   constructor(private cartService: CartService) {
   }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
-    this.updateCartData(this.items);
-  }
-
-  updateCartData(items) {
-    this.totalCart = this.cartService.updateCartData(items);
+    this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
+    this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);
   }
 
   removeBook(index) {
@@ -27,7 +25,6 @@ export class CartComponent implements OnInit {
   }
 
   increaseQuantity(index) {
-    this.updateCartData(this.items);
     return this.cartService.increaseQuantity(index);
   }
 
