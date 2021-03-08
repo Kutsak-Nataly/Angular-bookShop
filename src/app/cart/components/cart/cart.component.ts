@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
 
 @Component({
@@ -6,10 +6,12 @@ import {CartService} from '../../../shared/services/cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   items = [];
   sumCart: number;
   countCart: number;
+  sortFlag: string;
+  sortParam: string;
 
   constructor(private cartService: CartService) {
   }
@@ -19,6 +21,11 @@ export class CartComponent implements OnInit {
     this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
     this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);
   }
+  ngOnDestroy() {
+    this.cartService.sumCartSub.unsubscribe();
+    this.cartService.countCartSub.unsubscribe();
+  }
+
 
   removeBook(index) {
     return this.cartService.removeBook(index);

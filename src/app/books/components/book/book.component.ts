@@ -21,6 +21,10 @@ export class BookComponent implements OnInit {
     this.books = this.dataHandler.getBooks();
   }
 
+  trackByFn(index, item) {
+    return item.idKey;
+  }
+
   buyBook(book: BookModel): void {
     this.cartService.addBook(book);
   }

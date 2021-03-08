@@ -1,7 +1,24 @@
 <h2>Корзина</h2>
 <div *ngIf="items.length>0; else nobooks;">
+  <form>
+    <label>Cортировать книги
+      <select [(ngModel)]="sortParam" name="sortParam">
+        <option value="name">По имени</option>
+        <option value="price">По цене</option>
+        <option value="isAvailable">По количеству</option>
+      </select>
+    </label>
+    <label>
+      <input type="radio" name="switchRadio" value="az" [(ngModel)]="sortFlag">
+      AZ
+    </label>
+    <label>
+      <input type="radio" name="switchRadio" value="za" [(ngModel)]="sortFlag">
+      ZA
+    </label>
+  </form>
 <ul>
-  <li appActiveItem class="list-group-item" *ngFor="let item of items; let i=index;">
+  <li appActiveItem class="list-group-item" *ngFor="let item of items| orderBy : sortParam : sortFlag; let i=index;">
     <app-cart-item
       [item]="item" [index]="i"
       (removeBook)="removeBook($event)"

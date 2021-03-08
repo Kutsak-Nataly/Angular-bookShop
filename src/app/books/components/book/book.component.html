@@ -3,9 +3,9 @@
   <form>
     <label>Cортировать книги
       <select [(ngModel)]="sortParam" name="sortParam">
-        <option value="name" name="name">По имени</option>
-        <option value="price" name="price">По цене</option>
-        <option value="counted" name="counted">По количеству</option>
+        <option value="name">По имени</option>
+        <option value="price">По цене</option>
+        <option value="isAvailable">По количеству</option>
       </select>
     </label>
     <label>
@@ -16,14 +16,12 @@
       <input type="radio" name="switchRadio" value="za" [(ngModel)]="sortFlag">
       ZA
     </label>
-    <pre>
-        {{ sortFlag }} / {{sortParam}}
-    </pre>
   </form>
   <hr>
 </div>
 <div *ngIf="books; else loading;" class="row">
-  <div *ngFor="let book of books | orderBy : sortParam : sortFlag; let i=index;" class="col-md-6 col-lg-4">
+  <div *ngFor="let book of books | orderBy : sortParam : sortFlag; let i=index; trackBy: trackByFn;"
+       class="col-md-6 col-lg-4">
     <app-book-item [book]="book" (buy)="buyBook($event)"></app-book-item>
   </div>
 </div>
