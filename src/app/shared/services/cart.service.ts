@@ -2,9 +2,7 @@ import {Injectable} from '@angular/core';
 import {BookModel} from '../models/BookModel';
 import {Subject} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class CartService {
   sumCartSub = new Subject<number>();
@@ -39,6 +37,7 @@ export class CartService {
   }
 
   getItems(): BookModel[] {
+    this.updateCartData(this.cart);
     return this.cart;
   }
 

@@ -1,11 +1,11 @@
 <h2>Корзина</h2>
 <div *ngIf="items.length>0; else nobooks;">
   <form>
-    <label>Cортировать книги
+    <label>Упорядочить
       <select [(ngModel)]="sortParam" name="sortParam">
         <option value="name">По имени</option>
         <option value="price">По цене</option>
-        <option value="isAvailable">По количеству</option>
+        <option value="counted">По количеству</option>
       </select>
     </label>
     <label>
@@ -17,19 +17,23 @@
       ZA
     </label>
   </form>
-<ul>
-  <li appActiveItem class="list-group-item" *ngFor="let item of items| orderBy : sortParam : sortFlag; let i=index;">
-    <app-cart-item
-      [item]="item" [index]="i"
-      (removeBook)="removeBook($event)"
-      (increaseQuantity)="increaseQuantity($event)"
-      (decreaseQuantity)="decreaseQuantity($event)"
-    ></app-cart-item>
-  </li>
-</ul>
-<button (click)="onClearCart()">Очистить корзину</button>
-  <hr>
-  Всего книг: <strong>{{countCart}}</strong> / Общая стоимость: <strong>{{sumCart}}</strong> руб.
+  <hr  class="mb-3">
+
+  <ul>
+    <li appActiveItem class="list-group-item" *ngFor="let item of items| orderBy : sortParam : sortFlag; let i=index;">
+      <app-cart-item
+        [item]="item"
+        [index]="i"
+        (removeBook)="removeBook($event)"
+        (increaseQuantity)="increaseQuantity($event)"
+        (decreaseQuantity)="decreaseQuantity($event)"
+      ></app-cart-item>
+    </li>
+  </ul>
+  <button (click)="onClearCart()">Очистить корзину</button>
+ <p> Всего книг: <strong>{{countCart}}</strong> / Общая стоимость: <strong>{{sumCart}}</strong> руб.</p>
+  <hr  class="mt-5">
+  <button class="btn-green btn"  (click)="orderLink()">Оформить заказ</button>
 </div>
 <ng-template #nobooks>
   <h5>Корзина пуста</h5>

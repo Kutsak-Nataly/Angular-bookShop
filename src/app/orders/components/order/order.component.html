@@ -1,0 +1,17 @@
+<h1>Оформить заказ</h1>
+<div class="row">
+  <div class="col-6">
+    <ul>
+      <li class="list-group-item" *ngFor="let item of items;">
+        <h5>{{ item.name }}</h5>
+        <p><strong>{{item.price}}</strong> руб./шт. / <strong>{{item.counted}}</strong> штук</p>
+      </li>
+
+    </ul>
+
+    <p> Всего книг: <strong>{{countCart}}</strong> / Общая стоимость: <strong>{{sumCart}}</strong> руб.</p>
+  </div>
+  <div class="col-6">
+
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BookModel} from '../../../shared/models/BookModel';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-item',
@@ -13,11 +14,14 @@ export class BookItemComponent implements OnInit {
 
   @Output() buy = new EventEmitter<BookModel>();
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+  }
 
+  bookLink() {
+    this.router.navigate(['product', this.book.idKey]);
   }
 
 }

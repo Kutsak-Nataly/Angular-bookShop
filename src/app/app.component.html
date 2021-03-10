@@ -1,12 +1,29 @@
-<div class="container">
-  <h1 #appTitle>{{title}}</h1>
-  <div class="row">
-    <app-test></app-test>
-    <div class="col-md-7 col-lg-8">
-      <app-book></app-book>
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-secondary mb-4">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="/assets/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      {{title}}
+    </a>
+    <div class="collapse navbar-collapse" id="manemenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products-list" routerLinkActive="active">Каталог</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/test" routerLinkActive="active">Тестовая страница</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/core" routerLinkActive="active">Сервисы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active">Корзина</a>
+        </li>
+      </ul>
     </div>
-    <div class="col-md-5 col-lg-4">
-      <app-cart></app-cart>
-    </div>
+    <button type="button" class="btn btn-green">Админпанель</button>
   </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
 </div>

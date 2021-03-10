@@ -17,7 +17,7 @@
       ZA
     </label>
   </form>
-  <hr>
+  <hr class="mt-2">
 </div>
 <div *ngIf="books; else loading;" class="row">
   <div *ngFor="let book of books | orderBy : sortParam : sortFlag; let i=index; trackBy: trackByFn;"
@@ -28,4 +28,6 @@
 <ng-template #loading>
   <h5>Книг нет</h5>
 </ng-template>
+
+
 

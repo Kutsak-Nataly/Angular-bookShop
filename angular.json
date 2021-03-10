@@ -50,10 +50,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/font-awesome.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {

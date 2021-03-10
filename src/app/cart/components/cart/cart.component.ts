@@ -1,31 +1,32 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartComponent implements OnInit {
   items = [];
   sumCart: number;
   countCart: number;
   sortFlag: string;
   sortParam: string;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+    //todo: при покупке книги на странице /products-list информация sumCart и countCart не передается. sumCart = underfined.
+    // Но после любой перации на странице /cart sumCar пересчитывается корректно
+    this.cartService.updateCartData(this.items);
     this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
     this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);
+    console.log(this.sumCart);
   }
-  ngOnDestroy() {
-    this.cartService.sumCartSub.unsubscribe();
-    this.cartService.countCartSub.unsubscribe();
-  }
-
 
   removeBook(index) {
     return this.cartService.removeBook(index);
@@ -43,4 +44,7 @@ export class CartComponent implements OnInit, OnDestroy {
     this.items = this.cartService.removeAllBooks();
   }
 
+  orderLink() {
+    this.router.navigate(['order']);
+  }
 }
