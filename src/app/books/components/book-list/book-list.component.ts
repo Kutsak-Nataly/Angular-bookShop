@@ -5,10 +5,10 @@ import {CartService} from '../../../shared/services/cart.service';
 
 @Component({
   selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.scss']
 })
-export class BookComponent implements OnInit {
+export class BookListComponent implements OnInit {
   books: BookModel[];
   sortFlag: string;
   sortParam: string;

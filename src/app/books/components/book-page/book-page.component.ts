@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
 import {BookService} from '../../../shared/services/book.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-page',
@@ -14,7 +14,8 @@ export class BookPageComponent implements OnInit {
 
   constructor(private cartService: CartService,
               private dataHandler: BookService,
-              private activateRouter: ActivatedRoute) {
+              private activateRouter: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -25,5 +26,8 @@ export class BookPageComponent implements OnInit {
 
   buyBook(): void {
     this.cartService.addBook(this.book);
+  }
+  bookLink() {
+    return this.router.navigate(['products-list']);
   }
 }

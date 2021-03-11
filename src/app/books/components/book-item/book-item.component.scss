@@ -1,2 +1,12 @@
-.booklist span {font-weight: bold}
-.lastitem {color: #da0404}
+.booklist span {
+  font-weight: bold
+}
+
+.lastitem {
+  color: #da0404
+}
+
+h4 > a:hover {
+  color: #717070;
+  cursor: pointer;
+}

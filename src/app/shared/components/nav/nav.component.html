@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-secondary mb-4">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+      <img src="/assets/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      {{title}}
+    </a>
+    <div class="collapse navbar-collapse" id="manemenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products-list" routerLinkActive="active">Каталог</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/test" routerLinkActive="active">Тестовая страница</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/core" routerLinkActive="active">Сервисы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active">Корзина</a>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-green" (click)="adminLink()">Админпанель</button>
+  </div>
+</nav>

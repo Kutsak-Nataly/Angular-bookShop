@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">
+      <img src="/assets/img/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      {{title}}
+    </a>
+    <div class="collapse navbar-collapse" id="manemenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Администратор</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/products" routerLinkActive="active">Каталог</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/product/add" routerLinkActive="active">Добавить</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/product/edit:productID" routerLinkActive="active">Редактировать</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/orders" routerLinkActive="active">Заказы</a>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-secondary" (click)="adminOut()">Выйти</button>
+  </div>
+</nav>

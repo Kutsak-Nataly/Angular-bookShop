@@ -6,19 +6,28 @@ import {OrderByPipe} from './pipes/order-by.pipe';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {BookService} from './services/book.service';
 import {CartService} from './services/cart.service';
+import {NavComponent} from './components/nav/nav.component';
+import {RouterModule} from '@angular/router';
+import {NavAdmComponent} from './components/nav-adm/nav-adm.component';
 
 @NgModule({
   declarations: [
     ActiveItemDirective,
     OrderByPipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavComponent,
+    NavAdmComponent
   ],
-  imports: [],
+  imports: [
+    RouterModule
+  ],
   exports: [
     CommonModule,
     OrdersModule,
     ActiveItemDirective,
     OrderByPipe,
+    NavComponent,
+    NavAdmComponent
   ],
   providers: [
     BookService,

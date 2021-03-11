@@ -21,7 +21,7 @@ export class BookItemComponent implements OnInit {
   }
 
   bookLink() {
-    this.router.navigate(['product', this.book.idKey]);
+    return this.router.navigate(['product', this.book.idKey]);
   }
 
 }

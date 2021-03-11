@@ -20,8 +20,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
-    //todo: при покупке книги на странице /products-list информация sumCart и countCart не передается. sumCart = underfined.
-    // Но после любой перации на странице /cart sumCar пересчитывается корректно
     this.cartService.updateCartData(this.items);
     this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
     this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);

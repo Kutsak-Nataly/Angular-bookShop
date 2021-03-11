@@ -1,3 +1,7 @@
+<button type="button" class="btn btn-secondary"
+        (click)="bookLink()">Вернуться к каталогу
+</button>
+
 <h4>{{book.name}}</h4>
 <ul class="booklist">
   <li>Описание: <span>{{book.description}}</span></li>
@@ -8,7 +12,7 @@
   <li>Цена: <span>{{book.price}}</span> руб.</li>
 </ul>
 
-  <button type="button" class="btn btn-green"
-          *ngIf="book.isAvailable"
-          (click)="buyBook()">Buy
-  </button>
+<button type="button" class="btn btn-green"
+        *ngIf="book.isAvailable"
+        (click)="buyBook()">Buy
+</button>

@@ -9,29 +9,25 @@ import {OrdersModule} from './orders/orders.module';
 import {CartModule} from './cart/cart.module';
 import {SharedModule} from './shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
-import {ProductsComponent} from './admin/components/products/products.component';
-import {ProductAddComponent} from './admin/components/product-add/product-add.component';
-import {ProductPageComponent} from './admin/components/product-page/product-page.component';
 import {CoreModule} from './core/core.module';
+import {AdminModule} from './admin/admin.module';
 
 registerLocaleData(localeDECH);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
-    ProductAddComponent,
-    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AdminModule,
     BooksModule,
     OrdersModule,
     CartModule,
     TestsModule,
     SharedModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-BY'}
