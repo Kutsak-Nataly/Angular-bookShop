@@ -9,6 +9,8 @@ import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import {ProductPageComponent} from './components/product-page/product-page.component';
 import {AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
+import {AdminGuard} from './guards/admin.guard';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,11 @@ import {AdminLayoutComponent } from './components/admin/admin-layout/admin-layou
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
-
+    AdminGuard
   ]
 })
 export class AdminModule { }

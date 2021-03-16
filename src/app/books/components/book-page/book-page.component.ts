@@ -21,13 +21,13 @@ export class BookPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = +this.activateRouter.snapshot.params.productID;
     this.book = this.dataHandler.getBookById(this.id);
-    console.log(this.id);
   }
 
   buyBook(): void {
     this.cartService.addBook(this.book);
   }
+
   bookLink() {
-    return this.router.navigate(['products-list']);
+    return this.router.navigate(['../'],{relativeTo: this.activateRouter, fragment: 'book'+this.book.idKey});
   }
 }

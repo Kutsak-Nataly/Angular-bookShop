@@ -7,6 +7,7 @@ import {Subject} from 'rxjs';
 export class CartService {
   sumCartSub = new Subject<number>();
   countCartSub = new Subject<number>();
+  private item: BookModel;
   private sumCart = 0;
   private countCart = 0;
   private cart: BookModel[] = [];
@@ -41,8 +42,8 @@ export class CartService {
     return this.cart;
   }
 
-  removeBook(i: number): BookModel[] {
-    this.cart.splice(i, 1);
+  removeBook(item: BookModel): BookModel[] {
+    this.cart.splice(this.cart.indexOf(item), 1);
     this.updateCartData(this.cart);
     return this.cart;
   }
@@ -51,7 +52,8 @@ export class CartService {
     return this.cart = [];
   }
 
-  increaseQuantity(i: number): BookModel[] {
+  increaseQuantity(item: BookModel): BookModel[] {
+    const i = this.cart.indexOf(item);
     this.cart[i].counted++;
     if (this.cart[i].counted > this.cart[i].isAvailable) {
       alert('Для заказа доступно только ' + this.cart[i].isAvailable + ' книг');
@@ -63,7 +65,8 @@ export class CartService {
     }
   }
 
-  decreaseQuantity(i: number): BookModel[] {
+  decreaseQuantity(item: BookModel): BookModel[] {
+    const i = this.cart.indexOf(item);
     this.cart[i].counted--;
     if (this.cart[i].counted < 1) {
       alert('Товар будет удален из корзины');
@@ -71,6 +74,5 @@ export class CartService {
     }
     this.updateCartData(this.cart);
     return this.cart;
-
   }
 }

@@ -5,7 +5,7 @@ export class TestData {
 
   static books: BookModel[] = [
     {
-      idKey:0,
+      idKey:140,
       name: 'Тайна домика на пляже',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
@@ -15,18 +15,18 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 1,
-      name: 'Темные предки светлой детки',
+      idKey: 141,
+      name: 'Царевич с плохим резюме',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 13,
-      category: CategoryModel.history,
+      category: CategoryModel.det,
       createDate: new Date('2019-06-10'),
       isAvailable: 0,
       counted: 0
     },
     {
-      idKey: 2,
-      name: 'Романтические прозы',
+      idKey: 242,
+      name: 'Две жизни',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 3,
       category: CategoryModel.roman,
@@ -35,7 +35,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 3,
+      idKey: 243,
       name: 'О чудное мгновение',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 4,
@@ -45,8 +45,8 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 4,
-      name: 'Детский мир',
+      idKey: 244,
+      name: 'Приключения Тома Сойера',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 20,
       category: CategoryModel.child,
@@ -55,8 +55,8 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 5,
-      name: 'Фантастический мир',
+      idKey: 245,
+      name: 'Сила сильных',
       description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
       price: 8,
       category: CategoryModel.fantasy,
@@ -65,13 +65,23 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 6,
-      name: 'Сетка модульная',
-      description: 'На этот раз тайна зародилась после',
+      idKey: 246,
+      name: 'Золотая империя',
+      description: 'ород лишился своей магии. У власти тиран, который не может сдержать собственных демонов',
       price: 10,
       category: CategoryModel.other,
       createDate: new Date('2019-06-10'),
       isAvailable: 9,
+      counted: 0
+    },
+    {
+      idKey: 247,
+      name: 'Дети капитана Гранта',
+      description: 'Капитан Грант пустился в опасное плавание. Но его корабль терпит крушение',
+      price: 30,
+      category: CategoryModel.other,
+      createDate: new Date('2019-06-10'),
+      isAvailable: 19,
       counted: 0
     }
   ];

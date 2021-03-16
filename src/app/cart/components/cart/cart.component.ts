@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
 import {Router} from '@angular/router';
+import {BookModel} from '../../../shared/models/BookModel';
 
 @Component({
   selector: 'app-cart',
@@ -23,19 +24,18 @@ export class CartComponent implements OnInit {
     this.cartService.updateCartData(this.items);
     this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
     this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);
-    console.log(this.sumCart);
   }
 
-  removeBook(index) {
-    return this.cartService.removeBook(index);
+  removeBook(item: BookModel): BookModel[] {
+    return this.cartService.removeBook(item);
   }
 
-  increaseQuantity(index) {
-    return this.cartService.increaseQuantity(index);
+  increaseQuantity(item: BookModel): BookModel[] {
+    return this.cartService.increaseQuantity(item);
   }
 
-  decreaseQuantity(index) {
-    return this.cartService.decreaseQuantity(index);
+  decreaseQuantity(item: BookModel): BookModel[] {
+    return this.cartService.decreaseQuantity(item);
   }
 
   onClearCart() {

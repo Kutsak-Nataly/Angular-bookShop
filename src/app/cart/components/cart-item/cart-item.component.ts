@@ -8,18 +8,15 @@ import {BookModel} from '../../../shared/models/BookModel';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartItemComponent implements OnInit {
-
   @Input() item: BookModel;
-  @Input() index: number;
-  @Output() removeBook = new EventEmitter<number>();
-  @Output() increaseQuantity = new EventEmitter<number>();
-  @Output() decreaseQuantity = new EventEmitter<number>();
+  @Output() removeBook = new EventEmitter<BookModel>();
+  @Output() increaseQuantity = new EventEmitter<BookModel>();
+  @Output() decreaseQuantity = new EventEmitter<BookModel>();
 
   constructor() {
   }
 
   ngOnInit(): void {
-
   }
 
 }

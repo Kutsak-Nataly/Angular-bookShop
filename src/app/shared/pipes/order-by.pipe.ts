@@ -1,16 +1,14 @@
 import {Pipe, PipeTransform} from '@angular/core';
+import {BookModel} from '../models/BookModel';
 
 @Pipe({
   name: 'orderBy'
 })
 export class OrderByPipe implements PipeTransform {
 
-  transform(books: any, sortParam: string, sortFlag: string): unknown {
+  transform(books: any, sortParam: string, sortFlag = 'az'): unknown {
     if (!sortParam) {
       return books;
-    }
-    if (!sortFlag) {
-      sortFlag = 'az';
     }
     if (sortFlag === 'az') {
       books.sort((a, b) => (a[sortParam] > b[sortParam]));
