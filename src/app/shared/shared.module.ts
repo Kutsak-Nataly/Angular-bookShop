@@ -11,8 +11,8 @@ import {LoginComponent} from './components/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AuthService} from './services/auth.service';
-import {LocalStorageService} from './services/local-storage.service';
 import { FavoriteButtonComponent } from './components/favorite-button/favorite-button.component';
+import {LocalStorageService} from './services/local-storage.service';
 
 @NgModule({
   declarations: [

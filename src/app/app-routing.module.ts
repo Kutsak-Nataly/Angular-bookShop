@@ -12,7 +12,7 @@ const routes: Routes = [
       {path: 'product', loadChildren: () => import('./books/books-routing.module').then(m => m.BooksRoutingModule)},
       {path: 'cart', loadChildren: () => import('./cart/cart-routing.module').then(m => m.CartRoutingModule)},
       {path: 'order', loadChildren: () => import('./orders/orders-routing.module').then(m => m.OrdersRoutingModule)},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
     ]
   },
   {path: 'admin', loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)},
