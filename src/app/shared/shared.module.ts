@@ -11,6 +11,8 @@ import {LoginComponent} from './components/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {AuthService} from './services/auth.service';
+import {LocalStorageService} from './services/local-storage.service';
+import { FavoriteButtonComponent } from './components/favorite-button/favorite-button.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import {AuthService} from './services/auth.service';
     PageNotFoundComponent,
     NavComponent,
     NavAdmComponent,
-    LoginComponent
+    LoginComponent,
+    FavoriteButtonComponent
   ],
   imports: [
     CommonModule,
@@ -31,12 +34,14 @@ import {AuthService} from './services/auth.service';
     OrderByPipe,
     NavComponent,
     NavAdmComponent,
-    LoginComponent
+    LoginComponent,
+    FavoriteButtonComponent
   ],
   providers: [
     BookService,
     CartService,
-    AuthService
+    AuthService,
+    LocalStorageService
   ]
 })
 export class SharedModule {

@@ -7,7 +7,6 @@ import {Subject} from 'rxjs';
 export class CartService {
   sumCartSub = new Subject<number>();
   countCartSub = new Subject<number>();
-  private item: BookModel;
   private sumCart = 0;
   private countCart = 0;
   private cart: BookModel[] = [];

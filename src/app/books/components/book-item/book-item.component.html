@@ -1,7 +1,10 @@
 <div class="card" id="book{{book.idKey}}">
   <img class="card-img-top" src="/assets/img/{{book.idKey}}/
 thumbnail.jpg" alt="{{book.name}}">
-  <div class="card-header">{{book.category | uppercase}}</div>
+  <div class="card-header">
+    {{book.category | uppercase}}
+    <app-favorite-button [idKey]="book.idKey"></app-favorite-button>
+  </div>
   <div class="card-body">
     <h4><a (click)="bookLink()">{{book.name}}</a></h4>
     <p>{{book.description}}</p>
