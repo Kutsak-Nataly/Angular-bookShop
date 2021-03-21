@@ -9,8 +9,6 @@ import {Order} from '../../../shared/models/Order';
 })
 export class OrderComponent implements OnInit {
   message = false;
-  sumCart: number;
-  countCart: number;
   order = new Order('', '', '', '', '', []);
 
   constructor(private cartService: CartService) {
@@ -19,8 +17,6 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.order.cart = this.cartService.getItems();
     this.cartService.updateCartData(this.order.cart);
-    this.cartService.sumCartSub.subscribe((sumCart) => this.sumCart = sumCart);
-    this.cartService.countCartSub.subscribe((countCart) => this.countCart = countCart);
     this.order.delivery = 'Получение в пункте доставки';
     this.order.payment = 'Наличный расчет';
   }
