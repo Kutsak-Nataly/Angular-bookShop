@@ -1,6 +1,6 @@
 <h2>Избранное</h2>
 
-<div *ngIf="books; else loading;" class="row">
+<div *ngIf="books.length>0; else loading;" class="row">
   <button type="button" class="btn btn-secondary" (click)="clear()">Очистить избранное</button>
   <hr>
   <div class="col-md-4 col-lg-3"

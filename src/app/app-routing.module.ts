@@ -4,17 +4,14 @@ import {PageNotFoundComponent} from './books/components/page-not-found.component
 import {MainLayoutComponent} from './books/components/main-page/main-layout/main-layout.component';
 import {AdminRoutingModule} from './admin/admin-routing.module';
 import {LoginComponent} from './shared/components/login.component';
-import {FavoriteComponent} from './books/components/favorite/favorite.component';
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'product', pathMatch: 'full'},
-      //    {path: '', component: MainPageComponent},
       {path: 'product', loadChildren: () => import('./books/books-routing.module').then(m => m.BooksRoutingModule)},
       {path: 'cart', loadChildren: () => import('./cart/cart-routing.module').then(m => m.CartRoutingModule)},
       {path: 'order', loadChildren: () => import('./orders/orders-routing.module').then(m => m.OrdersRoutingModule)},
-      {path: 'favorite', component: FavoriteComponent},
       {path: 'login', component: LoginComponent}
     ]
   },

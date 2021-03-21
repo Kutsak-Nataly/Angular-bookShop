@@ -5,17 +5,15 @@ import {BookItemComponent} from './components/book-item/book-item.component';
 import {SharedModule} from '../shared/shared.module';
 import {FormsModule} from '@angular/forms';
 import {BookPageComponent} from './components/book-page/book-page.component';
-import {MainPageComponent} from './components/main-page/main-page.component';
 import {RouterModule} from '@angular/router';
 import { MainLayoutComponent } from './components/main-page/main-layout/main-layout.component';
-import { FavoriteComponent } from './components/favorite/favorite.component';
+import {FavoriteComponent} from './components/favorite/favorite.component';
 
 @NgModule({
   declarations: [
     BookListComponent,
     BookItemComponent,
     BookPageComponent,
-    MainPageComponent,
     MainLayoutComponent,
     FavoriteComponent
   ],
@@ -24,10 +22,6 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     SharedModule,
     FormsModule,
     RouterModule
-  ],
-  exports: [
-    BookListComponent,
-    BookItemComponent
   ]
 
 })

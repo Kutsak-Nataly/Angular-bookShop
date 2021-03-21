@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {LocalStorageService} from '../../../shared/services/local-storage.service';
 import {BookModel} from '../../../shared/models/BookModel';
 import {BookService} from '../../../shared/services/book.service';
@@ -9,7 +9,8 @@ import {CartService} from '../../../shared/services/cart.service';
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.scss']
 })
-export class FavoriteComponent implements OnInit {
+
+export class FavoriteComponent implements OnInit, DoCheck {
   books: BookModel[];
   private favoritArray: number[];
 
@@ -22,7 +23,11 @@ export class FavoriteComponent implements OnInit {
     this.getBooks();
   }
 
-  getBooks() {
+  ngDoCheck(): void {
+    this.getBooks();
+  }
+
+  getBooks(): BookModel[] {
     this.favoritArray = this.favoriteLocalStorage.getlist();
     if (this.favoritArray) {
       this.books = [];
@@ -30,6 +35,7 @@ export class FavoriteComponent implements OnInit {
         id => this.books.push(this.dataHandler.getBookById(id))
       );
     }
+    return this.books;
   }
 
   trackByFn(index, item) {

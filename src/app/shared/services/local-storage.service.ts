@@ -17,7 +17,6 @@ export class LocalStorageService {
   setItem(idItem) {
     this.itemsArray.push(idItem);
     localStorage.setItem(this.keyName, JSON.stringify(this.itemsArray));
-    this.getlist();
   }
 
   getItem(idItem): boolean {
@@ -27,11 +26,10 @@ export class LocalStorageService {
   removeItem(idItem) {
     this.itemsArray.splice(this.itemsArray.indexOf(idItem), 1);
     localStorage.setItem(this.keyName, JSON.stringify(this.itemsArray));
-    this.getlist();
   }
 
-  clear() {
-    this.itemsArray = [];
-    localStorage.clear();
+  clear(): number[] {
+    localStorage.removeItem(this.keyName);
+    return this.itemsArray = [];
   }
 }
