@@ -30,7 +30,7 @@
     </li>
   </ul>
   <button (click)="onClearCart()">Очистить корзину</button>
- <p> Всего книг: <strong></strong> / Общая стоимость: <strong></strong> руб.</p>
+ <p> Всего книг: <strong>{{totalCart.countCart}}</strong> / Общая стоимость: <strong>{{totalCart.sumCart}}</strong> руб.</p>
   <hr  class="mt-5">
   <button class="btn-green btn"  (click)="orderLink()">Оформить заказ</button>
 </div>

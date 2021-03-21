@@ -10,12 +10,16 @@ import {Order} from '../../../shared/models/Order';
 export class OrderComponent implements OnInit {
   message = false;
   order = new Order('', '', '', '', '', []);
-
+  totalCart = {
+    sumCart: 0,
+    countCart: 0
+  };
   constructor(private cartService: CartService) {
   }
 
   ngOnInit(): void {
     this.order.cart = this.cartService.getItems();
+    this.cartService.updateCartData(this.order.cart).subscribe((value => this.totalCart = value));
     this.cartService.updateCartData(this.order.cart);
     this.order.delivery = 'Получение в пункте доставки';
     this.order.payment = 'Наличный расчет';

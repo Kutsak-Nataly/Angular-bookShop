@@ -10,18 +10,19 @@ import {BookModel} from '../../../shared/models/BookModel';
 })
 export class CartComponent implements OnInit {
   items = [];
-  totalCart = {};
-  sortFlag: string;
+  sortFlag = 'az';
   sortParam: string;
-
+  totalCart = {
+    sumCart: 0,
+    countCart: 0
+  };
   constructor(private cartService: CartService,
               private router: Router) {
   }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
-    this.totalCart = this.cartService.updateCartData(this.items).subscribe();
-    console.log(this.totalCart);
+    this.cartService.updateCartData(this.items).subscribe((value => this.totalCart = value));
   }
 
   removeBook(item: BookModel): BookModel[] {
