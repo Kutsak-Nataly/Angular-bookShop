@@ -8,7 +8,7 @@
     <li>Категория: <span>{{book.category | uppercase}}</span></li>
     <li>Дата поступления: <span>{{book.createDate | date : 'mediumDate': null: 'ru-BY'}}</span></li>
     <li>В наличии: <span [class.lastitem]="!book.isAvailable">{{book.isAvailable}}</span> шт.</li>
-    <li>id: <span>{{book.idKey}}</span></li>
+    <li>id: <span>{{book.id}}</span></li>
     <li>Цена: <span>{{book.price}}</span> руб.</li>
   </ul>
   <button type="button" class="btn btn-green"

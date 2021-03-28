@@ -1,7 +1,7 @@
 import {CategoryModel} from './CategoryModel';
 
 export class BookModel {
-  idKey: number;
+  id: number;
   name: string;
   description: string;
   price: number;
@@ -12,7 +12,7 @@ export class BookModel {
 
 // eslint-disable-next-line max-len
   constructor(idKey: number, name: string, description: string, price: number, category: CategoryModel, createDate: Date, isAvailable: number, counted: number) {
-    this.idKey = idKey;
+    this.id = idKey;
     this.name = name;
     this.description = description;
     this.price = price;

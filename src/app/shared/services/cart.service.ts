@@ -5,10 +5,7 @@ import {of} from 'rxjs';
 @Injectable()
 
 export class CartService {
-  private totalCart = {
-    sumCart: 0,
-    countCart: 0
-  };
+  private totalCart = {sumCart: 0, countCart: 0};
   private cart: BookModel[] = [];
 
   constructor() {
@@ -25,7 +22,7 @@ export class CartService {
   }
 
   addBook(item: BookModel): BookModel[] {
-    if (this.cart.indexOf(item) !== -1) {
+    if (this.cart.includes(item)) {
       alert('Данынй товар уже в корзине');
     } else {
       item.counted = 1;

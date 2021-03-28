@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class LocalStorageService {
-  itemsArray: number[];
+  private itemsArray: number[];
   private keyName = 'favorites';
 
   constructor() {

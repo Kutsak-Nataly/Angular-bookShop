@@ -8,6 +8,7 @@ import {BookPageComponent} from './components/book-page/book-page.component';
 import {RouterModule} from '@angular/router';
 import { MainLayoutComponent } from './components/main-page/main-layout/main-layout.component';
 import {FavoriteComponent} from './components/favorite/favorite.component';
+import {MainPageComponent} from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FavoriteComponent} from './components/favorite/favorite.component';
     BookItemComponent,
     BookPageComponent,
     MainLayoutComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,

@@ -5,7 +5,7 @@ export class TestData {
 
   static books: BookModel[] = [
     {
-      idKey:140,
+      id:140,
       name: 'Тайна домика на пляже',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 23,
@@ -15,7 +15,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 141,
+      id: 141,
       name: 'Царевич с плохим резюме',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 13,
@@ -25,7 +25,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 242,
+      id: 242,
       name: 'Две жизни',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 3,
@@ -35,7 +35,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 243,
+      id: 243,
       name: 'О чудное мгновение',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 4,
@@ -45,7 +45,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 244,
+      id: 244,
       name: 'Приключения Тома Сойера',
       description: 'Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.',
       price: 20,
@@ -55,7 +55,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 245,
+      id: 245,
       name: 'Сила сильных',
       description: 'На этот раз тайна зародилась после обращение в агентство Дягтерева',
       price: 8,
@@ -65,7 +65,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 246,
+      id: 246,
       name: 'Золотая империя',
       description: 'ород лишился своей магии. У власти тиран, который не может сдержать собственных демонов',
       price: 10,
@@ -75,7 +75,7 @@ export class TestData {
       counted: 0
     },
     {
-      idKey: 247,
+      id: 247,
       name: 'Дети капитана Гранта',
       description: 'Капитан Грант пустился в опасное плавание. Но его корабль терпит крушение',
       price: 30,

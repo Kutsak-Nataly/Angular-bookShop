@@ -9,6 +9,7 @@ import {CartModule} from './cart/cart.module';
 import {SharedModule} from './shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AdminModule} from './admin/admin.module';
+import {CoreModule} from './core/core.module';
 
 registerLocaleData(localeDECH);
 
@@ -23,7 +24,8 @@ registerLocaleData(localeDECH);
     BooksModule,
     OrdersModule,
     CartModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-BY'}
