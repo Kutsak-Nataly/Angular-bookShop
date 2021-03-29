@@ -22,7 +22,6 @@ export class BookPageComponent implements OnInit {
   ngOnInit(): void {
     this.id = +this.activateRouter.snapshot.params.productID;
     this.dataHandler.getBookById(this.id).subscribe((value: BookModel) => this.book = value);
-    console.log(this.book);
   }
 
   buyBook(): void {

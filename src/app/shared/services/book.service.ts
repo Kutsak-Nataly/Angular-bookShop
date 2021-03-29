@@ -19,10 +19,9 @@ export class BookService {
   }
 
   getBookByArrayId(ids: number[]): Observable<BookModel[]> {
-    let str = '';
-    str += '?';
+    let str = '?';
     ids.forEach(id => str = `${str}id=${id}&`);
-    console.log(str);
+    str = str.slice(0, -1);
     return this.http.get<BookModel[]>(`${this.url}/books${str}`);
   }
 }

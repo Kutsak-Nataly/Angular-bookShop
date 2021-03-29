@@ -1,4 +1,4 @@
-import {Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {LocalStorageService} from '../../../shared/services/local-storage.service';
 import {BookModel} from '../../../shared/models/BookModel';
 import {BookService} from '../../../shared/services/book.service';
@@ -11,8 +11,8 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./favorite.component.scss']
 })
 
-export class FavoriteComponent implements OnInit, DoCheck, OnDestroy {
-  books: BookModel[];
+export class FavoriteComponent implements OnInit, OnDestroy {
+  books: BookModel[] = [];
   private favoriteArray: number[];
   private subscription: Subscription;
 
@@ -22,20 +22,18 @@ export class FavoriteComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.getBooks();
-  }
-
-  ngDoCheck(): void {
-    this.getBooks();
+     this.getBooks();
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
   getBooks(): void {
     this.favoriteArray = this.favoriteLocalStorage.getlist();
-    if (this.favoriteArray) {
+    if (this.favoriteArray.length > 0) {
       this.subscription = this.dataHandler.getBookByArrayId(this.favoriteArray).subscribe(
         (value: BookModel[]) => this.books = value,
         error => console.log('Error get books from database' + error)
