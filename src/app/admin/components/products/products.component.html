@@ -1,1 +1,39 @@
-<p>products works!</p>
+<div *ngIf="books;else loading;" class="row">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Название</th>
+      <th>Категория</th>
+      <th>Дата</th>
+      <th>Кол-во, шт</th>
+      <th>Цена, руб</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books; let i=index; trackBy: trackByFn;">
+      <td><strong>{{book.id}}</strong></td>
+      <td>{{book.name}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.createDate | date : 'mediumDate': null: 'ru-BY'}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.price}}</td>
+      <td>
+        <div class="d-grid gap-2 d-md-block">
+          <button type="button" class="btn btn-danger"
+                  (click)="deleteBook(book.id)">Удалить
+          </button>
+          <button type="button" class="btn btn-primary"
+                  (click)="editBook(book.id)">Редактировать
+          </button>
+        </div>
+      </td>
+    </tr>
+
+    </tbody>
+
+
+  </table>
+</div>
+<ng-template #loading>Книг нет</ng-template>

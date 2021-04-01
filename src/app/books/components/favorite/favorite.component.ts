@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {LocalStorageService} from '../../../shared/services/local-storage.service';
 import {BookModel} from '../../../shared/models/BookModel';
-import {BookService} from '../../../shared/services/book.service';
+import {DateService} from '../../../shared/services/date.service';
 import {CartService} from '../../../shared/services/cart.service';
 import {Subscription} from 'rxjs';
 
@@ -17,7 +17,7 @@ export class FavoriteComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   constructor(private favoriteLocalStorage: LocalStorageService,
-              private dataHandler: BookService,
+              private dataHandler: DateService,
               private cartService: CartService) {
   }
 

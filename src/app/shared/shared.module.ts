@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {ActiveItemDirective} from './directives/active-item.directive';
 import {OrderByPipe} from './pipes/order-by.pipe';
 import {PageNotFoundComponent} from '../books/components/page-not-found.component';
-import {BookService} from './services/book.service';
+import {DateService} from './services/date.service';
 import {CartService} from './services/cart.service';
 import {NavComponent} from './components/nav/nav.component';
 import {RouterModule} from '@angular/router';
@@ -38,7 +38,7 @@ import {LocalStorageService} from './services/local-storage.service';
     FavoriteButtonComponent
   ],
   providers: [
-    BookService,
+    DateService,
     CartService,
     AuthService,
     LocalStorageService

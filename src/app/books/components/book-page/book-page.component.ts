@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
-import {BookService} from '../../../shared/services/book.service';
+import {DateService} from '../../../shared/services/date.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BookModel} from '../../../shared/models/BookModel';
 
@@ -14,7 +14,7 @@ export class BookPageComponent implements OnInit {
   private id: number;
 
   constructor(private cartService: CartService,
-              private dataHandler: BookService,
+              private dataHandler: DateService,
               private activateRouter: ActivatedRoute,
               private router: Router) {
   }

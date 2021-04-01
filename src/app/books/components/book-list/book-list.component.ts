@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BookModel} from '../../../shared/models/BookModel';
-import {BookService} from '../../../shared/services/book.service';
+import {DateService} from '../../../shared/services/date.service';
 import {CartService} from '../../../shared/services/cart.service';
 import {Subscription} from 'rxjs';
 
@@ -15,7 +15,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   sortParam: string;
   private subscription: Subscription;
 
-  constructor(private dataHandler: BookService,
+  constructor(private dataHandler: DateService,
               private cartService: CartService) {
   }
 

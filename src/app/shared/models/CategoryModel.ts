@@ -1,10 +1,11 @@
-// eslint-disable-next-line no-shadow
-export const enum CategoryModel {
-  det = 'Детектив',
-  roman = 'Роман',
-  poez = 'Поэзия',
-  child = 'Детская литература',
-  history = 'История',
-  fantasy = 'Фантастика',
-  other = 'Прочее'
+export class CategoryModel {
+  id: number;
+  slug: string;
+  name: string;
+
+  constructor(id: number, slug: string, name: string) {
+    this.id = id;
+    this.slug = slug;
+    this.name = name;
+  }
 }

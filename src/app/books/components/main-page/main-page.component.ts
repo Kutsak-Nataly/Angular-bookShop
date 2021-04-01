@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -8,11 +8,15 @@ import {Router} from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
+
   goLink() {
     return this.router.navigate(['product']);
   }
+
 }

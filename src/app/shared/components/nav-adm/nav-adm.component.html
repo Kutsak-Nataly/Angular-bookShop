@@ -7,16 +7,13 @@
     <div class="collapse navbar-collapse" id="manemenu">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin" routerLinkActive="active">Администратор</a>
+          <a class="nav-link" routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Администратор</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/admin/products" routerLinkActive="active">Каталог</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/admin/product/add" routerLinkActive="active">Добавить</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/product/edit:productID" routerLinkActive="active">Редактировать</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/admin/orders" routerLinkActive="active">Заказы</a>
