@@ -5,13 +5,13 @@ export class BookModel {
   name: string;
   description: string;
   price: number;
-  category: CategoryModel[];
+  category: number[];
   createDate: Date;
   isAvailable: number;
   counted: number;
 
   // eslint-disable-next-line max-len
-  constructor(id: number, name: string, description: string, price: number, category: CategoryModel[], createDate: Date, isAvailable: number, counted: number) {
+  constructor(id: number, name: string, description: string, price: number, category: number[], createDate: Date, isAvailable: number, counted: number) {
     this.id = id;
     this.name = name;
     this.description = description;

@@ -81,12 +81,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6" *ngIf="categories">
+    <div class="col-md-4 col-sm-6" *ngIf="categories" >
       <h5 class="text-primary">Категория</h5>
-      <div *ngFor="let category of categories" class="form-check">
-        <input class="form-check-input" type="checkbox" id="i" name="i" value="{{category.name}}">
+      <div formArrayName="categories" *ngFor="let item of categoriesFormArray.controls; let i = index" class="form-check">
+        <input class="form-check-input" type="checkbox" [formControlName]="i" id="i" name="i" value="i">
         <label class="form-check-label" for="i">
-          {{category.name}}
+          {{item.value}}
         </label>
       </div>
     </div>
