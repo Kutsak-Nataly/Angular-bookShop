@@ -29,14 +29,22 @@ export class DateService {
   }
 
   deleteBook(id: number) {
-    return this.http.delete<BookModel>(this.urlBook + '/' + id).toPromise();
+    return this.http.delete<BookModel>(this.urlBook + '/' + id);
   }
 
   addBook(book: BookModel): Observable<BookModel> {
     return this.http.post<BookModel>(this.urlBook, book);
   }
-  getCategories(): Observable<CategoryModel[]>{
+
+  getCategories(): Observable<CategoryModel[]> {
     return this.http.get<CategoryModel[]>(this.urlCategory);
+  }
+  deleteCategory(id): Observable<CategoryModel> {
+    return this.http.delete<CategoryModel>(this.urlCategory + '/' + id);
+  }
+
+  addCategory(category: CategoryModel): Observable<CategoryModel> {
+    return this.http.post<CategoryModel>(this.urlCategory, category);
   }
 
   getUser(name: string, password: string): UserModel {

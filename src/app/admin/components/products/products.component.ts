@@ -33,11 +33,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   deleteBook(id: number) {
-    this.dataHandler.deleteBook(id).then(
-      () => console.log(`Книга была удалена id=${id}`),
+    this.dataHandler.deleteBook(id).subscribe(
+      () => this.books = this.books.filter(book => book.id !== id),
       error => console.error(error)
     );
-    this.books = this.books.filter(book => book.id !== id);
   }
 
   editBook(id) {

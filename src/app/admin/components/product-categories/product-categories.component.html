@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-8 col-sm-6">
+    <div *ngIf="categories;else loading;">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>slug</th>
+          <th>Название</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let category of categories;">
+          <td>{{category.id}}</td>
+          <td>{{category.slug}}</td>
+          <td><strong>{{category.name}}</strong></td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <button type="button" class="btn btn-danger"
+                      (click)="deleteCategory(category.id)">Удалить
+              </button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #loading>Категорий нет</ng-template>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <h5 class="text-primary">Добавить категорию</h5>
+    <form [formGroup]="formAddCategory" (ngSubmit)="addCategory()" novalidate>
+      <div class="col">
+        <div class="form-group">
+          <p>
+            <label for="id">ID категории</label>
+            <input type="text" id="id" name="id" formControlName="id" class="form-control">
+          </p>
+          <div class="text-danger"
+               *ngIf="formAddCategory.get('id').invalid &&formAddCategory.get('id').errors &&(formAddCategory.get('id').dirty || formAddCategory.get('name').touched)">
+            <small *ngIf="formAddCategory.get('id').errors.required">Поле обязательное для ввода</small>
+            <small *ngIf="formAddCategory.get('id').errors.pattern">Допустимо целое положительное число</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <p>
+            <label for="slug">Slug (назвиние на латинице)</label>
+            <input type="text" id="slug" name="slug" formControlName="slug" class="form-control">
+          </p>
+          <div class="text-danger"
+               *ngIf="formAddCategory.get('slug').invalid &&formAddCategory.get('slug').errors &&(formAddCategory.get('slug').dirty || formAddCategory.get('slug').touched)">
+            <small *ngIf="formAddCategory.get('slug').errors.required">Поле обязательное для ввода</small>
+            <small *ngIf="formAddCategory.get('slug').errors.pattern">Кириллические буквы, пробелы и спец. символы недопустимы</small>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <p>
+            <label for="name">Назвиние категории</label>
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">
+          </p>
+          <div class="text-danger"
+               *ngIf="formAddCategory.get('name').invalid &&formAddCategory.get('name').errors &&(formAddCategory.get('name').dirty || formAddCategory.get('name').touched)">
+            <small *ngIf="formAddCategory.get('name').errors.required">Поле обязательное для ввода</small>
+            <small *ngIf="formAddCategory.get('name').errors.pattern">Спец. символы недопустимы</small>
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="formAddCategory.invalid" class="btn btn-primary">Добавить</button>
+    </form>
+
+  </div>
+</div>
+

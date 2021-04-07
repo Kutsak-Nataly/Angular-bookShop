@@ -17,42 +17,42 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": 245,
       "slug": "det",
       "name": "Детектив"
     },
     {
-      "id": 2,
+      "id": 240,
       "slug": "roman",
       "name": "Роман"
     },
     {
-      "id": 3,
+      "id": 145,
       "slug": "poez",
       "name": "Поэзия"
     },
     {
-      "id": 4,
+      "id": 45,
       "slug": "hand",
       "name": "Рукоделие"
     },
     {
-      "id": 5,
+      "id": 24,
       "slug": "child",
       "name": "Детская литература"
     },
     {
-      "id": 6,
+      "id": 25,
       "slug": "history",
       "name": "История"
     },
     {
-      "id": 7,
+      "id": 215,
       "slug": "fantasy",
       "name": "Фантастика"
     },
     {
-      "id": 8,
+      "id": 22,
       "slug": "other",
       "name": "Прочее"
     }
@@ -63,7 +63,9 @@
       "name": "Тайна домика на пляже",
       "description": "Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.",
       "price": 23,
-      "category": [1],
+      "category": [
+        "det"
+      ],
       "createDate": "2020-6-10",
       "isAvailable": 3,
       "counted": 0
@@ -73,7 +75,9 @@
       "name": "Царевич с плохим резюме",
       "description": "Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.",
       "price": 13,
-      "category": [1],
+      "category": [
+        "det"
+      ],
       "createDate": "2019-6-10",
       "isAvailable": 0,
       "counted": 0
@@ -83,7 +87,10 @@
       "name": "Две жизни",
       "description": "Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.",
       "price": 3,
-      "category": [2, 1],
+      "category": [
+        "roman",
+        "det"
+      ],
       "createDate": "2020-6-02",
       "isAvailable": 5,
       "counted": 0
@@ -93,7 +100,9 @@
       "name": "О чудное мгновение",
       "description": "Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.",
       "price": 4,
-      "category": [3],
+      "category": [
+        "poez"
+      ],
       "createDate": "2019-09-30",
       "isAvailable": 0,
       "counted": 0
@@ -103,7 +112,9 @@
       "name": "Приключения Тома Сойера",
       "description": "Однажды, распутывая собственную родословную, Аня озадачилась тем фактом.",
       "price": 20,
-      "category": [5],
+      "category": [
+        "child"
+      ],
       "createDate": "2019-09-30",
       "isAvailable": 10,
       "counted": 0
@@ -113,7 +124,9 @@
       "name": "Сила сильных",
       "description": "На этот раз тайна зародилась после обращение в агентство Дягтерева",
       "price": 8,
-      "category": [7],
+      "category": [
+        "fantasy"
+      ],
       "createDate": "2019-09-16",
       "isAvailable": 10,
       "counted": 0
@@ -123,7 +136,9 @@
       "name": "Золотая империя",
       "description": "Рород лишился своей магии. У власти тиран, который не может сдержать собственных демонов",
       "price": 10,
-      "category": [8],
+      "category": [
+        "other"
+      ],
       "createDate": "2019-01-01",
       "isAvailable": 9,
       "counted": 0
@@ -133,9 +148,24 @@
       "name": "Дети капитана Гранта",
       "description": "Капитан Грант пустился в опасное плавание. Но его корабль терпит крушение",
       "price": 30,
-      "category": [8],
+      "category": [
+        "other"
+      ],
       "createDate": "2019-06-10",
       "isAvailable": 19,
+      "counted": 0
+    },
+    {
+      "id": 56,
+      "name": "7876ш8 нолнлгш",
+      "description": "ошгншнщгщгщг",
+      "price": 7,
+      "category": [
+        "hand",
+        "other"
+      ],
+      "createDate": "2021-04-08",
+      "isAvailable": 7,
       "counted": 0
     }
   ]

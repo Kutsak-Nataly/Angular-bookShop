@@ -11,6 +11,7 @@ import {ProductPageComponent} from './components/product-page/product-page.compo
 import {AdminLayoutComponent } from './components/admin/admin-layout/admin-layout.component';
 import {AdminGuard} from './guards/admin.guard';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProductCategoriesComponent } from './components/product-categories/product-categories.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ProductsComponent,
     AdminComponent,
     ProductPageComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ProductCategoriesComponent
   ],
   imports: [
     CommonModule,

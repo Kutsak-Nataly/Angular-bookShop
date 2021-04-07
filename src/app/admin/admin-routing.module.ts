@@ -7,6 +7,7 @@ import {ProductPageComponent} from './components/product-page/product-page.compo
 import {AdminLayoutComponent} from './components/admin/admin-layout/admin-layout.component';
 import {AdminComponent} from './components/admin/admin.component';
 import {AdminGuard} from './guards/admin.guard';
+import {ProductCategoriesComponent} from './components/product-categories/product-categories.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: 'products', component: ProductsComponent},
       {path: 'product/add', component: ProductAddComponent},
       {path: 'product/edit/:id', component: ProductPageComponent},
+      {path: 'product/categories', component: ProductCategoriesComponent},
       {path: 'orders', component: OrdersComponent},
     ]
   }
