@@ -28,18 +28,23 @@ export class DateService {
     return this.http.get<BookModel[]>(this.urlBook, {params: paramsId});
   }
 
-  deleteBook(id: number) {
+  deleteBook(id: number): Observable<BookModel> {
     return this.http.delete<BookModel>(this.urlBook + '/' + id);
   }
 
-  addBook(book: BookModel): Observable<BookModel> {
+ postBook(book: BookModel): Observable<BookModel> {
     return this.http.post<BookModel>(this.urlBook, book);
+  }
+
+  putBook(book: BookModel): Observable<BookModel> {
+    return this.http.put<BookModel>(this.urlBook+ '/' + book.id, book);
   }
 
   getCategories(): Observable<CategoryModel[]> {
     return this.http.get<CategoryModel[]>(this.urlCategory);
   }
-  deleteCategory(id): Observable<CategoryModel> {
+
+  deleteCategory(id: number): Observable<CategoryModel> {
     return this.http.delete<CategoryModel>(this.urlCategory + '/' + id);
   }
 

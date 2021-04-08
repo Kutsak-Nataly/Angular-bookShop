@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DateService} from '../../../shared/services/date.service';
 import {BookModel} from '../../../shared/models/BookModel';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.scss']
 })
-export class ProductAddComponent implements OnInit, OnDestroy {
+export class ProductAddComponent implements OnInit {
   book: BookModel;
   message = '';
   editBookForm: FormGroup;
@@ -24,28 +24,6 @@ export class ProductAddComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCategories();
-  }
-
-  ngOnDestroy(): void {
-  }
-
-  getCategories() {
-    this.dataHandler.getCategories().subscribe(
-      (value: CategoryModel[]) => {
-        this.categories = value;
-        this.createForm();
-      },
-      error => console.error('Error get books from database' + error),
-      () => console.log('Категории из базы получены')
-    );
-  }
-
-  addBook(book: BookModel) {
-    this.dataHandler.addBook(book).subscribe(
-      () => this.message = 'добавлена в каталог',
-      error => console.error(error)
-    );
-    this.editBookForm.reset();
   }
 
   onSubmit() {
@@ -68,7 +46,7 @@ export class ProductAddComponent implements OnInit, OnDestroy {
       isAvailable: Number(this.editBookForm.get('isAvailable').value),
       counted: 0,
     };
-    this.addBook(this.book);
+    this.postBook(this.book);
   }
 
   bookLink() {
@@ -77,6 +55,24 @@ export class ProductAddComponent implements OnInit, OnDestroy {
 
   get categoriesFormGroup() {
     return this.editBookForm.get('categories') as FormGroup;
+  }
+
+  private postBook(book: BookModel) {
+    this.dataHandler.postBook(book).subscribe(
+      () => this.message = 'добавлена в каталог',
+      error => console.error(error)
+    );
+    this.editBookForm.reset();
+  }
+
+  private getCategories() {
+    this.dataHandler.getCategories().subscribe(
+      (value: CategoryModel[]) => {
+        this.categories = value;
+        this.createForm();
+      },
+      error => console.error('Error get books from database' + error)
+    );
   }
 
   private createForm() {

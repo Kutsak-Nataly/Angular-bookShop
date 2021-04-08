@@ -156,15 +156,29 @@
       "counted": 0
     },
     {
-      "id": 56,
-      "name": "7876ш8 нолнлгш",
-      "description": "ошгншнщгщгщг",
-      "price": 7,
+      "id": 248,
+      "name": "орплол",
+      "description": "вапвпрпа парпп орпо",
+      "price": 678,
       "category": [
-        "hand",
-        "other"
+        "det",
+        "roman",
+        "poez",
+        "hand"
       ],
-      "createDate": "2021-04-08",
+      "createDate": "2021-04-14",
+      "isAvailable": 7,
+      "counted": 0
+    },
+    {
+      "id": 249,
+      "name": "гшгщ",
+      "description": "гншгшгщ",
+      "price": 657876,
+      "category": [
+        "poez"
+      ],
+      "createDate": "2021-04-13",
       "isAvailable": 7,
       "counted": 0
     }
