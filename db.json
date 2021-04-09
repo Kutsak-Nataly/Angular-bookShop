@@ -154,33 +154,6 @@
       "createDate": "2019-06-10",
       "isAvailable": 19,
       "counted": 0
-    },
-    {
-      "id": 248,
-      "name": "орплол",
-      "description": "вапвпрпа парпп орпо",
-      "price": 678,
-      "category": [
-        "det",
-        "roman",
-        "poez",
-        "hand"
-      ],
-      "createDate": "2021-04-14",
-      "isAvailable": 7,
-      "counted": 0
-    },
-    {
-      "id": 249,
-      "name": "гшгщ",
-      "description": "гншгшгщ",
-      "price": 657876,
-      "category": [
-        "poez"
-      ],
-      "createDate": "2021-04-13",
-      "isAvailable": 7,
-      "counted": 0
     }
   ]
 }
