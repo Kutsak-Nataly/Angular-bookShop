@@ -8,20 +8,26 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "servet": "json-server --watch db.json"
+    "servet": "json-server --watch db.json",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.2",
+    "@angular/cli": "~11.2.1",
     "@angular/common": "~11.2.2",
     "@angular/compiler": "~11.2.2",
+    "@angular/compiler-cli": "~11.2.2",
     "@angular/core": "~11.2.2",
     "@angular/forms": "~11.2.2",
     "@angular/platform-browser": "~11.2.2",
     "@angular/platform-browser-dynamic": "~11.2.2",
     "@angular/router": "~11.2.2",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "^6.6.6",
     "tslib": "^2.0.0",
+    "typescript": "^4.1.5",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
@@ -38,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "codelyzer": "^6.0.0",
+    "enhanced-resolve": "^3.3.0",
     "eslint": "^7.20.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -52,5 +59,9 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "^4.1.5"
+  },
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
   }
 }
