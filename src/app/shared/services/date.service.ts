@@ -7,9 +7,9 @@ import {CategoryModel} from '../models/CategoryModel';
 
 @Injectable()
 export class DateService {
-  private urlBook = 'http://localhost:3000/books';
-  private urlUser = 'http://localhost:3000/users';
-  private urlCategory = 'http://localhost:3000/categories';
+  private urlBook = 'https://github.com/Kutsak-Nataly/bookShop/tree/deploy/dist/bookShop/books';
+  private urlUser = 'https://github.com/Kutsak-Nataly/bookShop/tree/deploy/dist/bookShop/users';
+  private urlCategory = 'https://github.com/Kutsak-Nataly/bookShop/tree/deploy/dist/bookShop/categories';
   private user: UserModel;
 
   constructor(private http: HttpClient) {
