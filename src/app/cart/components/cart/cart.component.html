@@ -19,11 +19,10 @@
   </form>
   <hr  class="mb-3">
 
-  <ul>
-    <li appActiveItem class="list-group-item" *ngFor="let item of items| orderBy : sortParam : sortFlag; let i=index;">
+  <ul class="row">
+    <li class="list-group-item" appActiveItem *ngFor="let item of items| orderBy : sortParam : sortFlag;">
       <app-cart-item
         [item]="item"
-        [index]="i"
         (removeBook)="removeBook($event)"
         (increaseQuantity)="increaseQuantity($event)"
         (decreaseQuantity)="decreaseQuantity($event)"

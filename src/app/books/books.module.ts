@@ -8,6 +8,7 @@ import {BookPageComponent} from './components/book-page/book-page.component';
 import {MainPageComponent} from './components/main-page/main-page.component';
 import {RouterModule} from '@angular/router';
 import { MainLayoutComponent } from './components/main-page/main-layout/main-layout.component';
+import { LoginComponent } from '../shared/components/login.component';
 
 @NgModule({
   declarations: [

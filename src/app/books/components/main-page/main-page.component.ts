@@ -13,6 +13,6 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
   goLink() {
-    return this.router.navigate(['products-list']);
+    return this.router.navigate(['product']);
   }
 }

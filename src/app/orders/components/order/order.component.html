@@ -2,16 +2,59 @@
 <div class="row">
   <div class="col-6">
     <ul>
-      <li class="list-group-item" *ngFor="let item of items;">
+      <li class="list-group-item" *ngFor="let item of order.cart;">
         <h5>{{ item.name }}</h5>
-        <p><strong>{{item.price}}</strong> руб./шт. / <strong>{{item.counted}}</strong> штук</p>
+        <p><strong>{{item.price}}</strong> руб./шт. / <strong>{{item.counted}}</strong> шт.</p>
       </li>
-
     </ul>
 
     <p> Всего книг: <strong>{{countCart}}</strong> / Общая стоимость: <strong>{{sumCart}}</strong> руб.</p>
+    <h1 *ngIf="message" class="alert-valid">Ваш заказ отправлен</h1>
   </div>
   <div class="col-6">
-
+    <form #orderForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input [(ngModel)]="order.email" required type="email" class="form-control" id="email" placeholder="name@example.com" name="email" #email="ngModel" />
+        <div class="alert-valid" *ngIf="!email.valid && (email.dirty || email.touched)">
+          Введите ваш Email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Номер телефона*</label>
+        <input [(ngModel)]="order.phone" required type="tel" class="form-control" id="phone" placeholder="+375 хх ххх-хх-хх" name="phone" #phone="ngModel" />
+      <div class="alert-valid" *ngIf="!phone.valid && (phone.dirty || phone.touched)">
+        Введите корректно номер телефона
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="delivery">Способ доставки</label>
+        <select [(ngModel)]="order.delivery" required class="form-control" id="delivery" name="delivery" #delivery="ngModel">
+          <option value="Получение в пункте доставки">Получение в пункте доставки</option>
+          <option value="Доставка курьером">Доставка курьером</option>
+          <option value="Доставка почтой">Доставка почтой</option>
+        </select>
+        <div class="alert-valid" *ngIf="!delivery.valid && (delivery.dirty || delivery.touched)">
+          Выберите способ доставки
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="payment">Способ оплаты</label>
+        <select [(ngModel)]="order.payment" class="form-control" id="payment" name="payment" #payment="ngModel">
+          <option value="Наличный расчет">Наличный расчет</option>
+          <option value="Оплата картой">Оплата картой</option>
+          <option value="Банковский перевод">Банковский перевод</option>
+          <option value="Система Расчет">Система «Расчет»</option>
+        </select>
+        <div class="alert-valid" *ngIf="!payment.valid && (payment.dirty || payment.touched)">
+          Выберите способ оплаты
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="info">Дополнительная информация</label>
+        <textarea [(ngModel)]="order.dopInfo" class="form-control" id="info" name="info"></textarea>
+      </div>
+      <input type="submit" class="btn btn-green" (click)="onSubmit()" [disabled]="!orderForm.form.valid" value="Отправить">
+    </form>
   </div>
 </div>

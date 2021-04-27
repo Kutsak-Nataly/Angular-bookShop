@@ -1,7 +1,7 @@
 <h4>{{ item.name }}</h4>
-<button (click)="removeBook.emit(index)">Удалить
+<button (click)="removeBook.emit(item)">Удалить
 </button>
-<button (click)="increaseQuantity.emit(index)">+</button>
+<button (click)="increaseQuantity.emit(item)">+</button>
 <span> {{item.counted}} </span>
-<button (click)="decreaseQuantity.emit(index)">-</button>
+<button (click)="decreaseQuantity.emit(item)">-</button>
 <strong> {{item.price}}</strong> руб/шт.
