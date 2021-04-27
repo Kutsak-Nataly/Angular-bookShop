@@ -19,7 +19,7 @@
   </form>
   <hr class="mt-2">
 </div>
-<div *ngIf="books; else loading;" class="row">
+<div *ngIf="books; else loading;"class="row">
   <div class="col-md-4 col-lg-3"
        *ngFor="let book of books | orderBy : sortParam : sortFlag; let i=index; trackBy: trackByFn;">
     <app-book-item [book]="book" (buy)="buyBook($event)"></app-book-item>

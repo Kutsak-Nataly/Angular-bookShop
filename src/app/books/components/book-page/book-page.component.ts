@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from '../../../shared/services/cart.service';
-import {BookService} from '../../../shared/services/book.service';
+import {DateService} from '../../../shared/services/date.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BookModel} from '../../../shared/models/BookModel';
 
 @Component({
   selector: 'app-book-page',
@@ -9,18 +10,18 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./book-page.component.scss']
 })
 export class BookPageComponent implements OnInit {
-  book: any;
-  id: number;
+  book: BookModel;
+  private id: number;
 
   constructor(private cartService: CartService,
-              private dataHandler: BookService,
+              private dataHandler: DateService,
               private activateRouter: ActivatedRoute,
               private router: Router) {
   }
 
   ngOnInit(): void {
     this.id = +this.activateRouter.snapshot.params.productID;
-    this.book = this.dataHandler.getBookById(this.id);
+    this.dataHandler.getBookById(this.id).subscribe((value: BookModel) => this.book = value);
   }
 
   buyBook(): void {
@@ -28,6 +29,6 @@ export class BookPageComponent implements OnInit {
   }
 
   bookLink() {
-    return this.router.navigate(['../'],{relativeTo: this.activateRouter, fragment: 'book'+this.book.idKey});
+    return this.router.navigate(['../'], {relativeTo: this.activateRouter, fragment: 'book' + this.book.id});
   }
 }

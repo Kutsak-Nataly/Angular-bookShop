@@ -1,14 +1,19 @@
 import {Injectable} from '@angular/core';
+import {DateService} from './date.service';
+import {UserModel} from '../models/UserModel';
 
 @Injectable()
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn = true;
+  // isLoggedIn = false;
+  user: UserModel;
 
-  constructor() {
+  constructor(private dataHandler: DateService) {
   }
 
-  login(user, password) {
-    if (user === 'admin' && password === '1234567') {
+  login(name: string, password: string): boolean {
+    this.user = this.dataHandler.getUser(name, password);
+    if (name === 'admin' && password === '1234567') {
       this.isLoggedIn = true;
       return this.isLoggedIn;
     }
@@ -18,6 +23,4 @@ export class AuthService {
     this.isLoggedIn = false;
     return this.isLoggedIn;
   }
-
-
 }

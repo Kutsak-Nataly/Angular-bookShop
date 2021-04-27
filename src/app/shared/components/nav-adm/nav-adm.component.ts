@@ -9,6 +9,7 @@ import {AuthService} from '../../services/auth.service';
 })
 export class NavAdmComponent implements OnInit {
   title = 'bookShop';
+  id: number;
 
   constructor(private router: Router,
               private authService: AuthService) {

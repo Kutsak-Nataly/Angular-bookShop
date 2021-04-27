@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   template: `
       <div class="conteiner">
           <div class="col-md-4 offset-md-4" *ngIf="!auth">
-              <form novalidate [formGroup]="loginForm" (ngSubmit)="login(loginForm)" #userForm='ngForm'>
+              <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
                   <div class="form-group">
                       <label for="user">Логин</label>
                       <input type="text" class="form-control" id="user" formControlName="user"/>

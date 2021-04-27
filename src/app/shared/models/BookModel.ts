@@ -1,18 +1,16 @@
-import {CategoryModel} from './CategoryModel';
-
 export class BookModel {
-  idKey: number;
+  id: number;
   name: string;
   description: string;
   price: number;
-  category: CategoryModel;
+  category: string[];
   createDate: Date;
   isAvailable: number;
   counted: number;
 
-// eslint-disable-next-line max-len
-  constructor(idKey: number, name: string, description: string, price: number, category: CategoryModel, createDate: Date, isAvailable: number, counted: number) {
-    this.idKey = idKey;
+  // eslint-disable-next-line max-len
+  constructor(id: number, name: string, description: string, price: number, category: string[], createDate: Date, isAvailable: number, counted: number) {
+    this.id = id;
     this.name = name;
     this.description = description;
     this.price = price;

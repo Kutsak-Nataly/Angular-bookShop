@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{weCn:function(n,r,e){"use strict";e.d(r,"a",function(){return o});var t=e("fXoL");let o=(()=>{class n{transform(n,r,e="az"){return r?"az"===e?(n.sort((n,e)=>n[r]>e[r]),n):"za"===e?n.sort((n,e)=>e[r]>n[r]):void 0:n}}return n.\u0275fac=function(r){return new(r||n)},n.\u0275pipe=t.Hb({name:"orderBy",type:n,pure:!0}),n})()}}]);

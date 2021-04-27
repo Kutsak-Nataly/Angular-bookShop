@@ -1,33 +1,28 @@
 import {Injectable} from '@angular/core';
 import {BookModel} from '../models/BookModel';
-import {Subject} from 'rxjs';
+import {of} from 'rxjs';
 
 @Injectable()
 
 export class CartService {
-  sumCartSub = new Subject<number>();
-  countCartSub = new Subject<number>();
-  private item: BookModel;
-  private sumCart = 0;
-  private countCart = 0;
+  private totalCart = {sumCart: 0, countCart: 0};
   private cart: BookModel[] = [];
 
   constructor() {
   }
 
   updateCartData(items) {
-    this.sumCart = 0;
-    this.countCart = 0;
+    this.totalCart.sumCart = 0;
+    this.totalCart.countCart = 0;
     items.forEach((item: BookModel) => {
-      this.countCart += item.counted;
-      this.sumCart += item.counted * item.price;
+      this.totalCart.countCart += item.counted;
+      this.totalCart.sumCart += item.counted * item.price;
     });
-    this.sumCartSub.next(this.sumCart);
-    this.countCartSub.next(this.countCart);
+    return of(this.totalCart);
   }
 
   addBook(item: BookModel): BookModel[] {
-    if (this.cart.indexOf(item) !== -1) {
+    if (this.cart.includes(item)) {
       alert('Данынй товар уже в корзине');
     } else {
       item.counted = 1;
@@ -38,7 +33,6 @@ export class CartService {
   }
 
   getItems(): BookModel[] {
-    this.updateCartData(this.cart);
     return this.cart;
   }
 

@@ -1,1 +1,106 @@
-<p>product-add works!</p>
+<form [formGroup]="editBookForm" (ngSubmit)="onSubmit()" novalidate *ngIf="categories">
+  <div class="row">
+    <div class="col-md-8 col-sm-6">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <p>
+              <label for="id">ID по каталогу</label>
+              <input type="number" id="id" name="id" formControlName="id" class="form-control">
+            </p>
+            <div class="text-danger"
+                 *ngIf="editBookForm.get('id').invalid &&editBookForm.get('id').errors &&(editBookForm.get('id').dirty || editBookForm.get('id').touched)">
+              <small *ngIf="editBookForm.get('id').errors.required">Введите номер ID</small>
+              <small *ngIf="editBookForm.get('id').errors.pattern">ID - целое положительное число</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <p>
+              <label for="price">Цена</label>
+              <input type="text" id="price" name="price" formControlName="price" class="form-control"
+                     placeholder="0000.00">
+            </p>
+            <div class="text-danger"
+                 *ngIf="editBookForm.get('price').invalid && editBookForm.get('price').errors &&(editBookForm.get('price').dirty || editBookForm.get('price').touched)">
+              <small *ngIf="editBookForm.get('price').errors.required">Введите цену</small>
+              <small *ngIf="editBookForm.get('price').errors.pattern">Введите корректно цену</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <p>
+              <label for="isAvailable">Количество</label>
+              <input type="number" id="isAvailable" name="isAvailable" formControlName="isAvailable"
+                     class="form-control">
+            </p>
+            <div class="text-danger"
+                 *ngIf="editBookForm.get('isAvailable').invalid && editBookForm.get('isAvailable').errors && (editBookForm.get('isAvailable').dirty || editBookForm.get('isAvailable').touched)">
+              <small *ngIf="editBookForm.get('isAvailable').errors.required">Введите число</small>
+              <small *ngIf="editBookForm.get('isAvailable').errors.pattern">ID - целое положительное число</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <p>
+              <label for="createDate">Дата поступления</label>
+              <input type="date" id="createDate" name="createDate" formControlName="createDate" class="form-control">
+            </p>
+            <div class="text-danger"
+                 *ngIf="editBookForm.get('createDate').invalid && editBookForm.get('createDate').errors && (editBookForm.get('createDate').dirty || editBookForm.get('createDate').touched)">
+              <small *ngIf="editBookForm.get('createDate').errors.required">Обязательно для заполнения</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <p>
+          <label for="name">Название книги</label>
+          <input type="text" id="name" name="name" formControlName="name" class="form-control">
+        </p>
+        <div class="text-danger"
+             *ngIf="editBookForm.get('name').invalid && editBookForm.get('name').errors && (editBookForm.get('name').dirty || editBookForm.get('name').touched)">
+          <small *ngIf="editBookForm.get('name').errors.required">Введите название</small>
+          <small *ngIf="editBookForm.get('name').errors.maxLength">Вы превысили максимально допустимое количество
+            символов 30</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <p>
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" formControlName="description" rows="4"
+                    class="form-control"></textarea>
+        </p>
+        <div class="text-danger"
+             *ngIf="editBookForm.get('description').invalid && editBookForm.get('description').errors && (editBookForm.get('description').dirty || editBookForm.get('description').touched)">
+          <small *ngIf="editBookForm.get('description').errors.required">Описание обязательно для заполениня</small>
+          <small *ngIf="editBookForm.get('description').errors.maxLength">Вы превысили максимально допустимое количество
+            символов 200</small>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6" *ngIf="categories" formGroupName="categories">
+      <h5 class="text-primary">Категория</h5>
+      <div *ngFor="let category of categories" class="form-check">
+        <input class="form-check-input" type="checkbox" [formControlName]="category.slug" [id]="category.slug"
+               [name]="category.slug" [value]="category.slug">
+        <label class="form-check-label" [for]="category.slug">
+          {{category.name}}
+        </label>
+      </div>
+      <div class="text-danger"
+           *ngIf="editBookForm.controls['categories'].errors">
+        <small>Выберите одну или более категорий</small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="editBookForm.invalid" class="btn btn-primary">Добавить</button>
+  </div>
+</form>
+<h5 *ngIf="message">
+  <span class="text-primary" (click)="bookLink()">{{book.name}}</span> {{message}}
+</h5>
+
